@@ -67,79 +67,97 @@
 </section>
 
 <!-- PRICE LIST -->
-<section id="price">
-    <h2>Price List</h2>
-    <table>
-        <tr>
-            <th>Service</th>
-            <th>Starting Price</th>
-        </tr>
-        <tr>
-            <td>Bookkeeping</td>
-            <td>₹3,000 / Month</td>
-        </tr>
-        <tr>
-            <td>GST Compliance</td>
-            <td>₹2,000 / Month</td>
-        </tr>
-        <tr>
-            <td>Complete Accounting</td>
-            <td>₹6,000 / Month</td>
-<section id="pricing" style="padding:50px; background:#f9f9f9;">
-  <h2 style="text-align:center;">Subscription Plans – GST Return Filing</h2>
-  <p style="text-align:center;">Simple, transparent & affordable annual plans</p>
+<section id="pricing-portal" style="padding: 30px; border-radius: 15px; max-width: 950px; margin: 20px auto; font-family: 'Segoe UI', sans-serif; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 8px solid #1a365d;">
+    <h2 style="text-align: center; color: #1a365d;">Professional Service Quote</h2>
 
-  <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:30px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        
+        <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <h4 style="margin-top:0; color: #2c5282;">1. Accounting Volume</h4>
+            <p style="font-size: 13px; color: #718096;">Total monthly entries (Journal + Payment + Receipt + 25% Adjustment)</p>
+            <input type="number" id="total_entries" placeholder="Enter total entry count" oninput="calculatePriceChart()" style="width:100%; padding:12px; font-size:16px; border: 2px solid #cbd5e0; border-radius: 6px;">
+            
+            <div id="slab_info" style="margin-top:10px; font-weight:bold; color: #2b6cb0;"></div>
+        </div>
 
-    <!-- Plan 1 -->
-    <div style="background:#ffffff; padding:30px; width:300px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-      <h3>Standard GST Plan</h3>
-      <h2>₹15,000 / Year</h2>
-      <ul style="line-height:1.8;">
-        <li>✔ Monthly GST Return Filing</li>
-        <li>✔ Annual GST Return Included</li>
-        <li>✔ Compliance Support</li>
-        <li>✔ Email & WhatsApp Support</li>
-      </ul>
-      <p><strong>Best for:</strong> Businesses with Annual Return Applicable</p>
+        <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <h4 style="margin-top:0; color: #2c5282;">2. Additional Services</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.85em;">
+                <label><input type="checkbox" class="srv" value="gst_ret" onchange="calculatePriceChart()"> GST Return</label>
+                <label><input type="checkbox" class="srv" value="tds_ret" onchange="calculatePriceChart()"> TDS Return</label>
+                <label><input type="checkbox" class="srv" value="esi_pf" onchange="calculatePriceChart()"> ESI/PF</label>
+                <label><input type="checkbox" class="srv" value="mis" onchange="calculatePriceChart()"> MIS</label>
+                <label><input type="checkbox" class="srv" value="tds_cert" onchange="calculatePriceChart()"> TDS Cert</label>
+                <label><input type="checkbox" class="srv" value="stk_stmt" onchange="calculatePriceChart()"> Stk Stmt</label>
+                <label><input type="checkbox" class="srv" value="prov_bs" onchange="calculatePriceChart()"> Prov BS</label>
+                <label><input type="checkbox" class="srv" value="roc" onchange="calculatePriceChart()"> ROC</label>
+            </div>
+        </div>
     </div>
 
-    <!-- Plan 2 -->
-    <div style="background:#ffffff; padding:30px; width:300px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-      <h3>Basic GST Plan</h3>
-      <h2>₹12,000 / Year</h2>
-      <ul style="line-height:1.8;">
-        <li>✔ Monthly GST Return Filing</li>
-        <li>✖ Annual Return Not Applicable</li>
-        <li>✔ Compliance Support</li>
-        <li>✔ Email & WhatsApp Support</li>
-      </ul>
-      <p><strong>Best for:</strong> Businesses where Annual Return is not applicable</p>
+    <div id="price_box" style="margin-top:25px; padding:25px; background:#ebf8ff; border: 2px solid #3182ce; border-radius: 10px; text-align: center;">
+        <h3 style="margin:0; color: #2a4365;">Monthly Professional Fee</h3>
+        <h1 style="margin:10px 0; color: #2b6cb0; font-size: 42px;"><span id="display_total">₹0</span></h1>
+        <p style="color: #4a5568;">+ 18% GST: <span id="display_tax">₹0</span></p>
+        <hr style="border:0; border-top:1px dashed #bee3f8; margin: 15px 0;">
+        <h3 style="margin:0; color: #2c5282;">Grand Total: <span id="display_grand">₹0</span></h3>
+
+        <form action="https://formspree.io/f/YOUR_ID" method="POST" style="margin-top: 20px;">
+            <input type="hidden" name="Quote_Details" id="hidden_data">
+            <input type="email" name="email" placeholder="Enter Email to receive quote" required style="padding:10px; width:250px; border-radius:5px; border:1px solid #ccc;">
+            <button type="submit" style="padding:10px 20px; background:#2b6cb0; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Send Quote to Rajnish</button>
+        </form>
     </div>
-<div class="price-card" style="border:1px solid #ddd; padding:25px; border-radius:10px; text-align:center; max-width:350px; margin:auto; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+</section>
 
-  <h3 style="color:#2c3e50;">Startup Accounting Plan</h3>
+<script>
+// Pricing Data based on your uploaded chart
+const pricingTable = [
+    { range: [0, 50], price: 3000, gst_ret: 1000, tds_ret: 2000, esi_pf: 2000, tds_cert: 1000, mis: 1000, stk_stmt: 1000, prov_bs: 1000, roc: 10000 },
+    { range: [51, 100], price: 6000, gst_ret: 1500, tds_ret: 2000, esi_pf: 2000, tds_cert: 1500, mis: 1500, stk_stmt: 1500, prov_bs: 1500, roc: 10000 },
+    { range: [101, 150], price: 9000, gst_ret: 2000, tds_ret: 2500, esi_pf: 2500, tds_cert: 2000, mis: 2000, stk_stmt: 2000, prov_bs: 2000, roc: 12000 },
+    { range: [151, 200], price: 12000, gst_ret: 2500, tds_ret: 3000, esi_pf: 3000, tds_cert: 2500, mis: 2500, stk_stmt: 2500, prov_bs: 2500, roc: 14000 },
+    { range: [201, 250], price: 15000, gst_ret: 3000, tds_ret: 3500, esi_pf: 3500, tds_cert: 3000, mis: 3000, stk_stmt: 3000, prov_bs: 3000, roc: 16000 },
+    { range: [251, 300], price: 18000, gst_ret: 3500, tds_ret: 4000, esi_pf: 4000, tds_cert: 3500, mis: 3500, stk_stmt: 3500, prov_bs: 3500, roc: 18000 },
+    { range: [301, 350], price: 21000, gst_ret: 4000, tds_ret: 4500, esi_pf: 4500, tds_cert: 4000, mis: 4000, stk_stmt: 4000, prov_bs: 4000, roc: 20000 },
+    { range: [351, 400], price: 24000, gst_ret: 4500, tds_ret: 5000, esi_pf: 5000, tds_cert: 4500, mis: 4500, stk_stmt: 4500, prov_bs: 4500, roc: 22000 }
+];
 
-  <h2 style="color:#27ae60; margin:15px 0;">
-    ₹25,000 <span style="font-size:14px;">/ month</span>
-  </h2>
+function calculatePriceChart() {
+    const entries = parseInt(document.getElementById('total_entries').value) || 0;
+    let selectedTier = pricingTable.find(t => entries >= t.range[0] && entries <= t.range[1]);
+    
+    // Default to last tier if exceeds 400
+    if (entries > 400) selectedTier = pricingTable[pricingTable.length - 1];
+    
+    if (!selectedTier) {
+        document.getElementById('display_total').innerText = "₹0";
+        return;
+    }
 
-  <p style="font-size:14px; color:#555;">
-    Ideal for early-stage startups
-  </p>
+    document.getElementById('slab_info').innerText = `Current Slab: ${selectedTier.range[0]}-${selectedTier.range[1]} entries`;
 
-  <ul style="list-style:none; padding:0; font-size:15px; line-height:1.8;">
-    <li>✔ Accounting up to 200 entries/month</li>
-    <li>✔ GST Return Filing</li>
-    <li>✔ Banking & Reconciliation</li>
-    <li>✔ AR / AP Reports</li>
-    <li>✔ Monthly MIS Support</li>
-  </ul>
+    // Base Price
+    let subtotal = selectedTier.price;
 
-  <p style="font-size:13px; color:#777; margin-top:15px;">
-    <strong>Note:</strong> All services are provided as virtual support.
-  </p>
+    // Checkboxes Add-ons
+    const checkboxes = document.querySelectorAll('.srv:checked');
+    checkboxes.forEach(cb => {
+        subtotal += selectedTier[cb.value];
+    });
 
+    const tax = subtotal * 0.18;
+    const grand = subtotal + tax;
+
+    // Update UI
+    document.getElementById('display_total').innerText = "₹" + subtotal.toLocaleString('en-IN');
+    document.getElementById('display_tax').innerText = "₹" + tax.toLocaleString('en-IN');
+    document.getElementById('display_grand').innerText = "₹" + grand.toLocaleString('en-IN');
+
+    // Data for Rajnish
+    document.getElementById('hidden_data').value = `Total Entries: ${entries}, Slab: ${selectedTier.range[0]}-${selectedTier.range[1]}, Total Monthly: ₹${grand}`;
+}
+</script>
   <a href="#contact" style="display:inline-block; margin-top:20px; background:#27ae60; color:#fff; padding:10px 22px; border-radius:5px; text-decoration:none;">
     Get Started
   </a>
@@ -171,6 +189,7 @@
 
 </body>
 </html>
+
 
 
 
