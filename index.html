@@ -66,53 +66,59 @@
     </ul>
 </section>
 
-<!-- PRICE LIST -->
-<section id="pricing-portal" style="padding: 30px; border-radius: 15px; max-width: 950px; margin: 20px auto; font-family: 'Segoe UI', sans-serif; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 8px solid #1a365d;">
-    <h2 style="text-align: center; color: #1a365d;">Professional Service Quote</h2>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-        
-        <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-            <h4 style="margin-top:0; color: #2c5282;">1. Accounting Volume</h4>
-            <p style="font-size: 13px; color: #718096;">Total monthly entries (Journal + Payment + Receipt + 25% Adjustment)</p>
-            <input type="number" id="total_entries" placeholder="Enter total entry count" oninput="calculatePriceChart()" style="width:100%; padding:12px; font-size:16px; border: 2px solid #cbd5e0; border-radius: 6px;">
-            
-            <div id="slab_info" style="margin-top:10px; font-weight:bold; color: #2b6cb0;"></div>
-        </div>
-
-        <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-            <h4 style="margin-top:0; color: #2c5282;">2. Additional Services</h4>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.85em;">
-                <label><input type="checkbox" class="srv" value="gst_ret" onchange="calculatePriceChart()"> GST Return</label>
-                <label><input type="checkbox" class="srv" value="tds_ret" onchange="calculatePriceChart()"> TDS Return</label>
-                <label><input type="checkbox" class="srv" value="esi_pf" onchange="calculatePriceChart()"> ESI/PF</label>
-                <label><input type="checkbox" class="srv" value="mis" onchange="calculatePriceChart()"> MIS</label>
-                <label><input type="checkbox" class="srv" value="tds_cert" onchange="calculatePriceChart()"> TDS Cert</label>
-                <label><input type="checkbox" class="srv" value="stk_stmt" onchange="calculatePriceChart()"> Stk Stmt</label>
-                <label><input type="checkbox" class="srv" value="prov_bs" onchange="calculatePriceChart()"> Prov BS</label>
-                <label><input type="checkbox" class="srv" value="roc" onchange="calculatePriceChart()"> ROC</label>
-            </div>
-        </div>
+<section id="service-price-tab" style="padding: 30px; border-radius: 12px; max-width: 1000px; margin: 20px auto; font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; box-shadow: 0 8px 30px rgba(0,0,0,0.12); border: 1px solid #e2e8f0;">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h2 style="color: #1a365d; margin-bottom: 10px;">Service Price List & Calculator</h2>
+        <p style="color: #4a5568;">Select your accounting volume to see customized monthly pricing.</p>
     </div>
 
-    <div id="price_box" style="margin-top:25px; padding:25px; background:#ebf8ff; border: 2px solid #3182ce; border-radius: 10px; text-align: center;">
-        <h3 style="margin:0; color: #2a4365;">Monthly Professional Fee</h3>
-        <h1 style="margin:10px 0; color: #2b6cb0; font-size: 42px;"><span id="display_total">₹0</span></h1>
-        <p style="color: #4a5568;">+ 18% GST: <span id="display_tax">₹0</span></p>
-        <hr style="border:0; border-top:1px dashed #bee3f8; margin: 15px 0;">
-        <h3 style="margin:0; color: #2c5282;">Grand Total: <span id="display_grand">₹0</span></h3>
+    <div style="display: grid; grid-template-columns: 1fr 350px; gap: 30px;">
+        
+        <div style="background: #f7fafc; padding: 25px; border-radius: 10px;">
+            <h4 style="margin-top:0; color: #2c5282; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">1. Accounting Volume</h4>
+            <label style="display:block; margin-bottom: 8px; font-weight: 600;">Total Entries (Monthly):</label>
+            <input type="number" id="user_entries" placeholder="e.g. 120" oninput="updatePricing()" style="width: 100%; padding: 12px; border: 2px solid #cbd5e0; border-radius: 6px; font-size: 16px; margin-bottom: 20px;">
 
-        <form action="https://formspree.io/f/YOUR_ID" method="POST" style="margin-top: 20px;">
-            <input type="hidden" name="Quote_Details" id="hidden_data">
-            <input type="email" name="email" placeholder="Enter Email to receive quote" required style="padding:10px; width:250px; border-radius:5px; border:1px solid #ccc;">
-            <button type="submit" style="padding:10px 20px; background:#2b6cb0; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Send Quote to Rajnish</button>
-        </form>
+            <h4 style="color: #2c5282; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">2. Choose Your Services</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top:15px;">
+                <label style="cursor:pointer;"><input type="checkbox" class="addon" value="gst_ret" onchange="updatePricing()"> GST Returns</label>
+                <label style="cursor:pointer;"><input type="checkbox" class="addon" value="tds_ret" onchange="updatePricing()"> TDS Returns</label>
+                <label style="cursor:pointer;"><input type="checkbox" class="addon" value="esi_pf" onchange="updatePricing()"> ESI/PF</label>
+                <label style="cursor:pointer;"><input type="checkbox" class="addon" value="mis" onchange="updatePricing()"> MIS Reports</label>
+                <label style="cursor:pointer;"><input type="checkbox" class="addon" value="tds_cert" onchange="updatePricing()"> TDS Cert Download</label>
+                <label style="cursor:pointer;"><input type="checkbox" class="addon" value="stk_stmt" onchange="updatePricing()"> Stock Statement</label>
+                <label style="cursor:pointer;"><input type="checkbox" class="addon" value="prov_bs" onchange="updatePricing()"> Provisional BS</label>
+                <label style="cursor:pointer;"><input type="checkbox" class="addon" value="roc" onchange="updatePricing()"> ROC Filing</label>
+            </div>
+        </div>
+
+        <div style="background: #1a365d; color: white; padding: 30px; border-radius: 10px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2);">
+            <h3 style="margin-top: 0; text-align: center; color: #90cdf4;">Monthly Quote</h3>
+            <hr style="border: 0; border-top: 1px solid #2d3748; margin: 20px 0;">
+            
+            <div style="font-size: 14px; line-height: 2;">
+                <div style="display:flex; justify-content:space-between;"><span>Accounting Base:</span><span id="p_base">₹0</span></div>
+                <div style="display:flex; justify-content:space-between;"><span>Add-ons Total:</span><span id="p_addons">₹0</span></div>
+                <div style="display:flex; justify-content:space-between; color: #a0aec0;"><span>GST (18%):</span><span id="p_tax">₹0</span></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <span style="font-size: 14px; color: #cbd5e0;">Total Monthly Payable:</span>
+                <h2 style="margin: 5px 0; font-size: 36px; color: #68d391;" id="p_grand">₹0</h2>
+            </div>
+
+            <form action="https://formspree.io/f/YOUR_ID" method="POST" style="margin-top: 25px;">
+                <input type="hidden" name="Detailed_Quote" id="mail_body">
+                <input type="email" name="email" placeholder="Your Email Address" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 4px; border: none;">
+                <button type="submit" style="width: 100%; padding: 12px; background: #48bb78; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Send Quote to Rajnish</button>
+            </form>
+        </div>
     </div>
 </section>
 
 <script>
-// Pricing Data based on your uploaded chart
-const pricingTable = [
+// Data exactly as per your chart
+const rates = [
     { range: [0, 50], price: 3000, gst_ret: 1000, tds_ret: 2000, esi_pf: 2000, tds_cert: 1000, mis: 1000, stk_stmt: 1000, prov_bs: 1000, roc: 10000 },
     { range: [51, 100], price: 6000, gst_ret: 1500, tds_ret: 2000, esi_pf: 2000, tds_cert: 1500, mis: 1500, stk_stmt: 1500, prov_bs: 1500, roc: 10000 },
     { range: [101, 150], price: 9000, gst_ret: 2000, tds_ret: 2500, esi_pf: 2500, tds_cert: 2000, mis: 2000, stk_stmt: 2000, prov_bs: 2000, roc: 12000 },
@@ -123,53 +129,44 @@ const pricingTable = [
     { range: [351, 400], price: 24000, gst_ret: 4500, tds_ret: 5000, esi_pf: 5000, tds_cert: 4500, mis: 4500, stk_stmt: 4500, prov_bs: 4500, roc: 22000 }
 ];
 
-function calculatePriceChart() {
-    const entries = parseInt(document.getElementById('total_entries').value) || 0;
-    let selectedTier = pricingTable.find(t => entries >= t.range[0] && entries <= t.range[1]);
-    
-    // Default to last tier if exceeds 400
-    if (entries > 400) selectedTier = pricingTable[pricingTable.length - 1];
-    
-    if (!selectedTier) {
-        document.getElementById('display_total').innerText = "₹0";
+function updatePricing() {
+    const val = parseInt(document.getElementById('user_entries').value) || 0;
+    const tier = rates.find(r => val >= r.range[0] && val <= r.range[1]) || (val > 400 ? rates[7] : null);
+
+    if (!tier) {
+        resetDisplay();
         return;
     }
 
-    document.getElementById('slab_info').innerText = `Current Slab: ${selectedTier.range[0]}-${selectedTier.range[1]} entries`;
-
-    // Base Price
-    let subtotal = selectedTier.price;
-
-    // Checkboxes Add-ons
-    const checkboxes = document.querySelectorAll('.srv:checked');
-    checkboxes.forEach(cb => {
-        subtotal += selectedTier[cb.value];
+    let base = tier.price;
+    let addonsTotal = 0;
+    const selected = document.querySelectorAll('.addon:checked');
+    
+    selected.forEach(cb => {
+        addonsTotal += tier[cb.value];
     });
 
+    const subtotal = base + addonsTotal;
     const tax = subtotal * 0.18;
     const grand = subtotal + tax;
 
-    // Update UI
-    document.getElementById('display_total').innerText = "₹" + subtotal.toLocaleString('en-IN');
-    document.getElementById('display_tax').innerText = "₹" + tax.toLocaleString('en-IN');
-    document.getElementById('display_grand').innerText = "₹" + grand.toLocaleString('en-IN');
+    // Display
+    document.getElementById('p_base').innerText = "₹" + base.toLocaleString();
+    document.getElementById('p_addons').innerText = "₹" + addonsTotal.toLocaleString();
+    document.getElementById('p_tax').innerText = "₹" + Math.round(tax).toLocaleString();
+    document.getElementById('p_grand').innerText = "₹" + Math.round(grand).toLocaleString();
 
-    // Data for Rajnish
-    document.getElementById('hidden_data').value = `Total Entries: ${entries}, Slab: ${selectedTier.range[0]}-${selectedTier.range[1]}, Total Monthly: ₹${grand}`;
+    // Prep hidden data for Rajnish
+    document.getElementById('mail_body').value = `Monthly Entry: ${val}, Base: ${base}, Add-ons: ${addonsTotal}, GST: ${tax}, Total: ${grand}`;
+}
+
+function resetDisplay() {
+    document.getElementById('p_base').innerText = "₹0";
+    document.getElementById('p_addons').innerText = "₹0";
+    document.getElementById('p_tax').innerText = "₹0";
+    document.getElementById('p_grand').innerText = "₹0";
 }
 </script>
-  <a href="#contact" style="display:inline-block; margin-top:20px; background:#27ae60; color:#fff; padding:10px 22px; border-radius:5px; text-decoration:none;">
-    Get Started
-  </a>
-
-</div>
-
-  </div>
-</section>
-        </tr>
-    </table>
-</section>
-
 <!-- CONTACT -->
 <section id="contact">
     <h2>Contact Us</h2>
@@ -189,6 +186,7 @@ function calculatePriceChart() {
 
 </body>
 </html>
+
 
 
 
