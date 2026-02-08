@@ -173,26 +173,68 @@ function updateMasterQuote() {
     document.getElementById('form_data').value = `Volume: ${val}, Slab: ${slab.r[0]}-${slab.r[1]}, Monthly Base: ${base}, Services: ${srvTotal}, Total (Inc Tax): ${grand}`;
 }
 </script>
-<!-- CONTACT -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <form action="mailto:rajnishsingh54@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="Name" placeholder="Your Name" required>
-        <input type="email" name="Email" placeholder="Your Email" required>
-        <input type="text" name="Mobile" placeholder="Mobile Number">
-        <textarea name="Query" placeholder="Write your query in detail"></textarea>
-        <button type="submit">Submit Query</button>
-    </form>
+<section id="contact" style="padding: 80px 20px; background: #f4f7f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="color: #1a365d; font-size: 36px; margin-bottom: 10px;">Get In Touch</h2>
+            <p style="color: #4a5568; font-size: 18px;">Ready to simplify your accounts? Let's talk.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+            
+            <div style="background: #1a365d; color: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="margin-top: 0; color: #90cdf4;">Contact Information</h3>
+                <p style="opacity: 0.8; margin-bottom: 30px;">Fill out the form or reach us via WhatsApp/Email. We usually respond within 2 hours.</p>
+                
+                <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                    <span style="font-size: 24px; margin-right: 15px;">📍</span>
+                    <span>Noida, Uttar Pradesh, India</span>
+                </div>
+                <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                    <span style="font-size: 24px; margin-right: 15px;">📧</span>
+                    <a href="mailto:rajnishsingh54@gmail.com" style="color: white; text-decoration: none;">rajnishsingh54@gmail.com</a>
+                </div>
+                <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                    <span style="font-size: 24px; margin-right: 15px;">📞</span>
+                    <span>+91 XXXXXXXXXX</span>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h4 style="color: #90cdf4;">Follow Our Updates</h4>
+                    <div style="display: flex; gap: 15px; margin-top: 10px;">
+                        <a href="#" style="color: white; font-size: 20px; text-decoration: none;">LinkedIn</a>
+                        <a href="#" style="color: white; font-size: 20px; text-decoration: none;">Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <form action="https://formspree.io/f/YOUR_ID" method="POST">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2d3748;">Full Name</label>
+                        <input type="text" name="name" placeholder="Enter your name" required style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; outline: none;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2d3748;">Email Address</label>
+                        <input type="email" name="email" placeholder="email@example.com" required style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; outline: none;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2d3748;">Message</label>
+                        <textarea name="message" rows="4" placeholder="How can we help you?" required style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; outline: none; resize: none;"></textarea>
+                    </div>
+                    <button type="submit" style="width: 100%; padding: 15px; background: #2b6cb0; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 DBRRM Accounting & Working Capital Consultancy</p>
-</footer>
-
-</body>
-</html>
-
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Rajnish,%20I%20visited%20your%20website%20and%20need%20accounting%20help." 
+   target="_blank" 
+   style="position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; text-decoration: none;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat" style="width: 35px; height: 35px;">
+</a>
 
 
 
