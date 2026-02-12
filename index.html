@@ -247,5 +247,24 @@ function updateMasterQuote() {
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat" style="width: 35px; height: 35px;">
 </a>
 
+    <form id="AKfycbwyDt3QRkw9R51CZZO0uhKKlZERKHfTM7gIWu6Cn4YADzQtjzaNfHtusYyiL6-VmDNg">
+  <input type="text" name="name" placeholder="Aapka Naam" required>
+  <input type="email" name="email" placeholder="Email ID" required>
+  <textarea name="message" placeholder="Message"></textarea>
+  <button type="submit">Submit Karein</button>
+</form>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwyDt3QRkw9R51CZZO0uhKKlZERKHfTM7gIWu6Cn4YADzQtjzaNfHtusYyiL6-VmDNg/exec';
+  const form = document.getElementById('AKfycbwyDt3QRkw9R51CZZO0uhKKlZERKHfTM7gIWu6Cn4YADzQtjzaNfHtusYyiL6-VmDNg');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Data Save Ho Gaya!"))
+      .catch(error => console.error('Error!', error.message));
+  });
+</script>
+
 
 
