@@ -255,17 +255,11 @@ function updateMasterQuote() {
   <button type="submit">Submit Karein</button>
 </form>
 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwyDt3QRkw9R51CZZO0uhKKlZERKHfTM7gIWu6Cn4YADzQtjzaNfHtusYyiL6-VmDNg/exec';
-  const form = document.getElementById('AKfycbwyDt3QRkw9R51CZZO0uhKKlZERKHfTM7gIWu6Cn4YADzQtjzaNfHtusYyiL6-VmDNg');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => alert("Data Save Ho Gaya!"))
-      .catch(error => console.error('Error!', error.message));
-  });
-</script>
+<form id="myForm">
+  <input type="text" name="name" placeholder="Aapka Naam">
+  <input type="number" name="mobile" placeholder="Mobile Number" required>
+  <button type="submit">Submit</button>
+</form>
 
 
 
