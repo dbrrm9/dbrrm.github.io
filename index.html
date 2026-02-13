@@ -256,16 +256,36 @@ function updateMasterQuote() {
 </form>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzmp6DEsdiR2i7Z-JmH3iD9-oabtD0J1FekBORSuhqf3XMqFDmN54_IHx7rNwiup89PEw/exec**'
+  // Maine niche aapka URL fix kar diya hai (extra stars hata diye hain)
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzmp6DEsdiR2i7Z-JmH3iD9-oabtD0J1FekBORSuhqf3XMqFDmN54_IHx7rNwiup89PEw/exec'
   const form = document.getElementById('contact-form')
+  const btn = document.getElementById('submit-btn')
 
   form.addEventListener('submit', e => {
     e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => alert("Shukriya! Aapka data save ho gaya hai."))
-      .catch(error => console.error('Error!', error.message))
+    btn.disabled = true
+    btn.innerHTML = "Sending..."
+
+    fetch(scriptURL, { 
+        method: 'POST', 
+        body: new FormData(form),
+        mode: 'no-cors' // Yeh line GitHub pages ke liye zaroori hai
+    })
+    .then(() => {
+        alert("Shukriya! Aapka data save ho gaya hai.")
+        btn.disabled = false
+        btn.innerHTML = "Send Message"
+        form.reset()
+    })
+    .catch(error => {
+        console.error('Error!', error.message)
+        alert("Kuch galat hua! Dubara koshish karein.")
+        btn.disabled = false
+        btn.innerHTML = "Send Message"
+    })
   })
 </script>
+
 
 
 
