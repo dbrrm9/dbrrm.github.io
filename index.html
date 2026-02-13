@@ -254,13 +254,29 @@ function updateMasterQuote() {
   <button type="submit">Submit Karein</button>
 </form>
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxyCLojFPTz7N5f0ZttP0aSqyX2FhLxUgBfjVPklRTb_82qWW9-fP00RjMVobZMuEW7ng/exec'
-const form = document.getElementById('12lg-Gi1uhoLZSw4TkV9iyeiLksfC4CohqrrhRDPCLgk')
+// Galti yahan thi: 12lg-Gi... ki jagah 'contact-form' hona chahiye
+const form = document.getElementById('contact-form') 
 
 form.addEventListener('submit', e => {
   e.preventDefault()
+  
+  // Submit button ko disable karein taki double entry na ho
+  const btn = form.querySelector('button');
+  btn.disabled = true;
+  btn.innerText = "Saving...";
+
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => alert("Dhanyawad! Apka message save ho gaya hai."))
-    .catch(error => console.error('Error!', error.message))
+    .then(response => {
+        alert("Dhanyawad! Apka message save ho gaya hai.");
+        form.reset();
+        btn.disabled = false;
+        btn.innerText = "Submit Karein";
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert("Kuch error aaya hai!");
+        btn.disabled = false;
+    })
 })
 
 
