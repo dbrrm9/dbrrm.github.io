@@ -246,43 +246,19 @@ function updateMasterQuote() {
    style="position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; text-decoration: none;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat" style="width: 35px; height: 35px;">
 </a>
-<form id="myWebForm">
-  <input type="text" id="name" placeholder="Apna Naam" required>
-  <input type="email" id="email" placeholder="Email ID" required>
-    <input type="mobile" id="mobile" placeholder="mobile" required>
-  <textarea id="msg" placeholder="msg"></textarea>
+<form id="contact-form">
+  <input type="text" name="name" placeholder="Apka Naam" required>
+  <input type="email" name="email" placeholder="Email ID" required>
+  <input type="text" name="mobile" placeholder="Mobile Number" required>
+  <textarea name="message" placeholder="Message"></textarea>
   <button type="submit">Submit Karein</button>
 </form>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxyCLojFPTz7N5f0ZttP0aSqyX2FhLxUgBfjVPklRTb_82qWW9-fP00RjMVobZMuEW7ng/exec'
+const form = document.getElementById('contact-form')
 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyAPC2h6t5bdrhTuf0AnPs0cqhthBpq6WpJ4oZZcjjCnHmWJjySsENYpr5FMmUT7gxmpg/exec';
-  const form = document.getElementById('myWebForm');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    
-    const data = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-        mobile: document.getElementById('mobile').value,
-      msg: document.getElementById('msg').value
-    };
-
-    fetch(scriptURL, {
-      method: 'POST',
-      body: JSON.stringify(data),
-    })
-    .then(response => alert("Data Save Ho Gaya!"))
-    .catch(error => console.error('Error!', error.message));
-  });
-</script>
-   
-
-
-
-
-
-
-
-
-
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => alert("Dhanyawad! Apka message save ho gaya hai."))
+    .catch(error => console.error('Error!', error.message))
+})
