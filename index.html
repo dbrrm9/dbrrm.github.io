@@ -254,13 +254,13 @@ function updateMasterQuote() {
   <button type="submit">Submit Karein</button>
 </form>
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxyCLojFPTz7N5f0ZttP0aSqyX2FhLxUgBfjVPklRTb_82qWW9-fP00RjMVobZMuEW7ng/exec'
-// Galti yahan thi: 12lg-Gi... ki jagah 'contact-form' hona chahiye
+//
 const form = document.getElementById('contact-form') 
 
 form.addEventListener('submit', e => {
   e.preventDefault()
   
-  // Submit button ko disable karein taki double entry na ho
+  //
   const btn = form.querySelector('button');
   btn.disabled = true;
   btn.innerText = "Saving...";
@@ -278,6 +278,7 @@ form.addEventListener('submit', e => {
         btn.disabled = false;
     })
 })
+
 
 
 
