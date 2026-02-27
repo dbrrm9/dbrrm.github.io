@@ -9,7 +9,7 @@ collections:
     files:
       - label: "Contact Details"
         name: "contact"
-        file: "_data/contact.json"
+        file: "data/contact.json"
         fields:
           - {label: "Phone Number", name: "phone", widget: "string"}
           - {label: "Email ID", name: "email", widget: "string"}
