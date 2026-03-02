@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBRRM Financial Services</title>
+    <style>
+        /* Theme: Dark Blue, White, and Black */
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #001f3f; color: white; padding: 20px; text-align: center; }
+        h1 { margin: 0; font-size: 2.5em; letter-spacing: 2px; }
+
+        /* Navigation Bar */
+        .navbar { background-color: #000; overflow: hidden; display: flex; justify-content: center; }
+        .navbar a, .dropbtn { color: white; padding: 14px 20px; text-decoration: none; text-align: center; display: inline-block; }
+        .navbar a:hover, .dropdown:hover .dropbtn { background-color: #004080; }
+
+        /* Dropdown for Services */
+        .dropdown { display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; }
+        .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; text-align: left; border-bottom: 1px solid #ddd; }
+        .dropdown-content a:hover { background-color: #f1f1f1; color: #001f3f; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .content { padding: 50px; text-align: center; background-color: white; margin: 20px auto; max-width: 1000px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DBRRM FINANCIAL SERVICES</h1>
+</header>
+
+<nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <div class="dropdown">
+        <button class="dropbtn">Services ▾</button>
+        <div class="dropdown-content">
+            <a href="/services/accounting/">Accounting</a>
+            <a href="/services/gst/">GST</a>
+            <a href="/services/tds/">TDS</a>
+            <a href="/services/esi/">ESI</a>
+            <a href="/services/pf/">PF</a>
+            <a href="/services/cma/">CMA</a>
+            <a href="/services/balance-sheet/">Balance Sheet</a>
+            <a href="/services/audit/">Audit</a>
+            <a href="/services/cases/">Cases</a>
+            <a href="/services/itr/">ITR</a>
+            <a href="/services/registration/">Registration</a>
+        </div>
+    </div>
+    <a href="/price-list/">Price List</a>
+    <a href="/loan/">Loan</a>
+    <a href="/contact/">Contact</a>
+</nav>
+
+<div class="content">
+    <h2>Welcome to DBRRM Financial Services</h2>
+    <p>Professional financial solutions for your business growth.</p>
+</div>
+
+</body>
+</html>
 
