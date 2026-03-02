@@ -3,32 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBRRM Financial Services</title>
+    <title>DBRRM Financial Services | Professional Accounting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Theme: Dark Blue, White, and Black */
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
-        header { background-color: #001f3f; color: white; padding: 20px; text-align: center; }
-        h1 { margin: 0; font-size: 2.5em; letter-spacing: 2px; }
+        /* CSS Variables for easy color management */
+        :root {
+            --dark-blue: #001f3f;
+            --accent-gold: #c5a059;
+            --light-bg: #f8f9fa;
+            --black: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Poppins', sans-serif; margin: 0; background-color: var(--light-bg); color: var(--black); line-height: 1.6; }
+        
+        /* Header & Logo Section */
+        header { background-color: var(--white); padding: 25px 0; text-align: center; border-bottom: 4px solid var(--dark-blue); }
+        .logo-text { margin: 0; font-size: 2.8em; font-weight: 700; color: var(--dark-blue); letter-spacing: 1px; text-transform: uppercase; }
+        .logo-sub { font-size: 1em; color: var(--accent-gold); font-weight: 400; letter-spacing: 3px; }
 
         /* Navigation Bar */
-        .navbar { background-color: #000; overflow: hidden; display: flex; justify-content: center; }
-        .navbar a, .dropbtn { color: white; padding: 14px 20px; text-decoration: none; text-align: center; display: inline-block; }
-        .navbar a:hover, .dropdown:hover .dropbtn { background-color: #004080; }
+        .navbar { background-color: var(--black); sticky: top; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; padding: 5px 0; }
+        .navbar a, .dropbtn { color: var(--white); padding: 15px 25px; text-decoration: none; font-weight: 500; transition: 0.3s; cursor: pointer; border: none; background: none; font-family: inherit; font-size: 16px; }
+        .navbar a:hover, .dropdown:hover .dropbtn { color: var(--accent-gold); }
 
-        /* Dropdown for Services */
-        .dropdown { display: inline-block; }
-        .dropdown-content { display: none; position: absolute; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; }
-        .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; text-align: left; border-bottom: 1px solid #ddd; }
-        .dropdown-content a:hover { background-color: #f1f1f1; color: #001f3f; }
+        /* Dropdown Styling */
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: var(--white); min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1); border-radius: 0 0 8px 8px; overflow: hidden; }
+        .dropdown-content a { color: var(--black); padding: 12px 20px; border-bottom: 1px solid #eee; font-size: 14px; text-align: left; }
+        .dropdown-content a:hover { background-color: var(--dark-blue); color: var(--white); }
         .dropdown:hover .dropdown-content { display: block; }
 
-        .content { padding: 50px; text-align: center; background-color: white; margin: 20px auto; max-width: 1000px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        /* Hero Section (Attractive Banner) */
+        .hero { background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), url('https://images.unsplash.com/photo-1454165833762-02c67b679718?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
+                background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
+        .hero h2 { font-size: 3em; margin-bottom: 20px; }
+        .hero p { font-size: 1.2em; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+        .cta-btn { background-color: var(--accent-gold); color: white; padding: 15px 40px; text-decoration: none; font-weight: 600; border-radius: 50px; transition: 0.3s; }
+        .cta-btn:hover { background-color: #a88545; transform: translateY(-3px); }
+
+        /* Features Section */
+        .services-preview { padding: 60px 20px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .service-card { background: white; padding: 40px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border-top: 5px solid var(--dark-blue); }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .service-card h3 { color: var(--dark-blue); margin-bottom: 15px; }
+
+        footer { background: var(--black); color: white; text-align: center; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>DBRRM FINANCIAL SERVICES</h1>
+    <div class="logo-text">DBRRM</div>
+    <div class="logo-sub">FINANCIAL SERVICES</div>
 </header>
 
 <nav class="navbar">
@@ -40,13 +67,11 @@
             <a href="/services/accounting/">Accounting</a>
             <a href="/services/gst/">GST</a>
             <a href="/services/tds/">TDS</a>
-            <a href="/services/esi/">ESI</a>
-            <a href="/services/pf/">PF</a>
-            <a href="/services/cma/">CMA</a>
+            <a href="/services/esi-pf/">ESI & PF</a>
+            <a href="/services/cma/">CMA Report</a>
             <a href="/services/balance-sheet/">Balance Sheet</a>
             <a href="/services/audit/">Audit</a>
-            <a href="/services/cases/">Cases</a>
-            <a href="/services/itr/">ITR</a>
+            <a href="/services/itr/">Income Tax (ITR)</a>
             <a href="/services/registration/">Registration</a>
         </div>
     </div>
@@ -55,11 +80,30 @@
     <a href="/contact/">Contact</a>
 </nav>
 
-<div class="content">
-    <h2>Welcome to DBRRM Financial Services</h2>
-    <p>Professional financial solutions for your business growth.</p>
-</div>
+<section class="hero">
+    <h2>Smart Financial Solutions</h2>
+    <p>Empowering your business with expert accounting, taxation, and legal compliance services. We handle the numbers, you handle the growth.</p>
+    <a href="/contact/" class="cta-btn">Get Free Consultation</a>
+</section>
+
+<section class="services-preview">
+    <div class="service-card">
+        <h3>GST & Taxation</h3>
+        <p>Hassle-free GST filing, reconciliation, and tax planning for your business.</p>
+    </div>
+    <div class="service-card">
+        <h3>Audit & Assurance</h3>
+        <p>Comprehensive audit services to ensure financial accuracy and compliance.</p>
+    </div>
+    <div class="service-card">
+        <h3>Loan Assistance</h3>
+        <p>Expert guidance and documentation for business and personal loans.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 DBRRM Financial Services. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
-
