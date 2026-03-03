@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | DBRRM Financial Services</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
 
-    <header>
-        <nav class="container">
-            <div class="logo">DBRRM <span>Financial Services</span></div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-               <li><a href="about/index.html" class="active">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+<header>
+    <div class="logo-text">DBRRM</div>
+    <div class="logo-sub">FINANCIAL SERVICES</div>
+</header>
+
+<nav class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">About</a>
+    <div class="dropdown">
+        <button class="dropbtn">Services ▾</button>
+        <div class="dropdown-content">
+            <a href="../services/accounting/">Accounting</a>
+            <a href="../services/gst/">GST</a>
+            <a href="../services/tds/">TDS</a>
+            <a href="../services/audit/">Audit</a>
+        </div>
+    </div>
+    <a href="../price-list/">Price List</a>
+    <a href="../contact/">Contact</a>
+</nav>
     </header>
 
     <section class="about-hero">
@@ -69,4 +79,5 @@
 
 </body>
 </html>
+
 
