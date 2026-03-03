@@ -1,111 +1,66 @@
 body {
+    background-color: #0f172a; /* Dark Blue Background */
+    color: #f8fafc; /* White Text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* HEADER */
 header {
-    background: #0a2a43;
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header nav a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* SIDEBAR */
-.sidebar {
-    position: fixed;
-    right: 0;
-    top: 120px;
-    background: #ffffff;
-    width: 220px;
-    padding: 15px;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-}
-
-.sidebar .whatsapp {
-    display: block;
-    background: #25d366;
-    color: white;
+    background: linear-gradient(90deg, #1e293b, #334155);
+    padding: 2rem;
     text-align: center;
-    padding: 10px;
+    border-bottom: 2px solid #38bdf8;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+h1 {
+    color: #38bdf8; /* Vibrant Blue */
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
     margin-top: 10px;
-    text-decoration: none;
-    font-weight: bold;
 }
 
-/* LANDING */
-.landing {
-    background: linear-gradient(to right, #0a2a43, #0d4d7a);
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
+.btn:hover {
+    background: #ffffff;
+    color: #38bdf8;
+    box-shadow: 0 0 15px #38bdf8;
 }
 
-.landing .btn {
-    background: #ffcc00;
-    padding: 12px 25px;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* SECTIONS */
-section {
-    padding: 60px 80px;
-    background: white;
-    margin: 20px;
-    border-radius: 6px;
-}
-
-/* TABLE */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-table, th, td {
-    border: 1px solid #ccc;
-}
-th, td {
-    padding: 12px;
-    text-align: center;
-}
-
-/* FORM */
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-form button {
-    background: #0a2a43;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-/* FOOTER */
 footer {
-    background: #0a2a43;
-    color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+    background: #1e293b;
+    margin-top: 50px;
+    color: #94a3b8;
 }
-
-
-.navbar { background: #333; overflow: hidden; }
-.navbar a, .dropbtn { float: left; color: white; padding: 14px 16px; text-decoration: none; border: none; background: none; }
-.dropdown { float: left; overflow: hidden; }
-.dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; }
-.dropdown-content a { color: black; padding: 12px 16px; display: block; }
-.dropdown:hover .dropdown-content { display: block; }
