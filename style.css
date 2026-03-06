@@ -34,3 +34,30 @@ header { background-color: var(--white); padding: 25px 0; text-align: center; bo
 
 /* Footer */
 footer { background: var(--black); color: white; text-align: center; padding: 30px; margin-top: 50px; }
+
+/* WhatsApp Header Link Styling */
+.top-nav-contact {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 5% 0 0;
+}
+
+.whatsapp-header-link {
+    text-decoration: none;
+    color: #25D366;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid #25D366;
+    padding: 5px 15px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.whatsapp-header-link:hover {
+    background-color: #25D366;
+    color: white;
+}
