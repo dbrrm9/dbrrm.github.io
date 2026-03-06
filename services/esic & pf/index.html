@@ -41,161 +41,177 @@
     <p>Professional Accounting & Bookkeeping solutions for your business growth.</p>
 </section>
 
-<main class="content-section">
-    
-    <div class="card-simple">
-        <h2 style="color: var(--dark-blue); border-bottom: 2px solid var(--accent-gold); padding-bottom: 10px;">
-            ESIC & PF (Payroll servicess)
-        </h2>
-        <p>We provide end-to-end financial management for a diverse range of clients, including <strong>Individuals, Proprietorships, and Micro/Small Traders and Manufacturers</strong>.</p>
-        <p>Additionally, we specialize in <strong>Accounting Outsourcing</strong> for Mid-sized and Large Corporations. We take full ownership of your back-office financial functions.</p>
-    </div>
-
-   <!DOCTYPE html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESIC, PF & Payroll Services | DBRRM</title>
+    <title>ESIC, PF & Payroll Compliance Services | DBRRM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #27ae60; /* Green theme for Payroll/HR */
-            --bg-light: #f4f7f6;
-            --text-dark: #333;
+            --primary-color: #1a2a6c;
+            --accent-color: #27ae60; 
+            --bg-light: #f9f9fb;
+            --text-main: #2c3e50;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
             margin: 0;
             padding: 0;
             background-color: var(--bg-light);
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 20px;
+        .wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
 
-        .header-section {
+        .main-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
-        .header-section h1 {
+        .main-title h1 {
             color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border-top: 5px solid var(--secondary-color);
-        }
-
-        .service-card:hover { transform: translateY(-10px); }
-
-        .service-card i {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
+            font-size: 2.8rem;
             margin-bottom: 15px;
-            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .cta-section {
-            background: var(--primary-color);
-            color: #fff;
+        .main-title p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #ffffff;
             padding: 40px;
-            text-align: center;
-            border-radius: 10px;
-            margin-top: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
         }
 
-        .cta-button {
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--accent-color);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-card i {
+            font-size: 2.8rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #5d6d7e;
+        }
+
+        .contact-banner {
+            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+            color: #fff;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 70px;
+        }
+
+        .btn-action {
             display: inline-block;
-            background: var(--secondary-color);
+            background: var(--accent-color);
             color: white;
-            padding: 12px 30px;
+            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: background 0.3s;
+        }
+
+        .btn-action:hover {
+            background: #219150;
+        }
+
+        @media (max-width: 768px) {
+            .main-title h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="header-section">
-            <h1>ESIC, PF & Payroll Management</h1>
-            <p>Employees ki khushi aur legal compliance, dono hamari zimmedari.</p>
+    <div class="wrapper">
+        <div class="main-title">
+            <h1>ESIC, PF & Payroll Services</h1>
+            <p>Comprehensive HR compliance and payroll solutions designed to minimize risk and maximize employee satisfaction.</p>
         </div>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-piggy-bank"></i>
+        <div class="grid-container">
+            <div class="feature-card">
+                <i class="fas fa-user-shield"></i>
                 <h3>EPF Compliance</h3>
-                <p>New employee registration (UAN generation), monthly ECR filing, aur PF withdrawal/transfer mein poori madad.</p>
+                <p>End-to-end Employee Provident Fund management including UAN generation, monthly ECR filing, and seamless PF withdrawal/transfer assistance.</p>
             </div>
 
-            <div class="service-card">
-                <i class="fas fa-hospital-user"></i>
-                <h3>ESIC Services</h3>
-                <p>Monthly contribution jama karna, TIC (E-Pehchan Card) generate karna aur accident/medical claims ka paperwork handle karna.</p>
+            <div class="feature-card">
+                <i class="fas fa-notes-medical"></i>
+                <h3>ESIC Administration</h3>
+                <p>Timely monthly contribution deposits, generation of E-Pehchan Cards, and handling all medical and accident claim documentation.</p>
             </div>
 
-            <div class="service-card">
-                <i class="fas fa-money-check-alt"></i>
-                <h3>End-to-End Payroll</h3>
-                <p>Salary structures design karna, Payslips generate karna aur statutory deductions (PT, LWF) ka calculation.</p>
+            <div class="feature-card">
+                <i class="fas fa-calculator"></i>
+                <h3>Payroll Processing</h3>
+                <p>Accurate salary structure design, generation of digital payslips, and automated calculation of statutory deductions like PT and LWF.</p>
             </div>
 
-            <div class="service-card">
-                <i class="fas fa-balance-scale"></i>
-                <h3>Labor Law Registers</h3>
-                <p>Muster Roll, Wage Register, aur saalana returns (Annual Returns) maintain karna taaki Labor Inspection mein koi dikat na aaye.</p>
+            <div class="feature-card">
+                <i class="fas fa-archive"></i>
+                <h3>Labor Law Compliance</h3>
+                <p>Maintenance of mandatory statutory registers (Muster Roll, Wage Register) and filing of Annual Returns to ensure audit readiness.</p>
             </div>
 
-            <div class="service-card">
-                <i class="fas fa-hand-holding-usd"></i>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
                 <h3>Bonus & Gratuity</h3>
-                <p>Payment of Bonus Act aur Gratuity Act ke tehat calculation aur legal documentation ki suvidha.</p>
+                <p>Precise calculations and documentation under the Payment of Bonus Act and Payment of Gratuity Act to ensure legal adherence.</p>
             </div>
 
-            <div class="service-card">
-                <i class="fas fa-id-card"></i>
-                <h3>Employee KYC</h3>
-                <p>UAN-Aadhaar linking, bank KYC update karna aur digital signature (DSC) ke saath portal management.</p>
+            <div class="feature-card">
+                <i class="fas fa-fingerprint"></i>
+                <h3>Digital Compliance</h3>
+                <p>Management of UAN-Aadhaar linking, bank KYC updates, and secure handling of portal activities via Digital Signature Certificates (DSC).</p>
             </div>
         </div>
 
-        <div class="cta-section">
-            <h2>Kyunki Aapke Employees Aapki Asset Hain!</h2>
-            <p>Seamless payroll aur labor law compliance ke liye humse sampark karein.</p>
-            <a href="mailto:contact@yourwebsite.com" class="cta-button">Get Started</a>
+        <div class="contact-banner">
+            <h2>Streamline Your Workforce Management</h2>
+            <p>Focus on growing your business while we handle the complexities of labor laws and payroll.</p>
+            <a href="mailto:info@yourdomain.com" class="btn-action">Consult an Expert</a>
         </div>
     </div>
 
 </body>
 </html>
-</html>
-
-
