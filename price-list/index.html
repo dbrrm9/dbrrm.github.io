@@ -31,114 +31,172 @@
 </nav>
     </header>
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <!DOCTYPE html>
-<html lang="en">
+   <!DOCTYPE html>
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #3498db;
-            --success: #27ae60;
-            --bg: #f4f7f6;
-        }
-        .calc-wrapper {
+        .calculator-card {
             font-family: 'Segoe UI', Arial, sans-serif;
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            color: #333;
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
-        .header { text-align: center; margin-bottom: 30px; }
-        .range-section { margin-bottom: 30px; text-align: center; }
+        .header { text-align: center; color: #1a2a6c; margin-bottom: 25px; }
         
-        select {
-            padding: 12px 20px;
-            font-size: 16px;
+        /* Range Dropdown Style */
+        .range-box {
+            background: #f8f9fa;
+            padding: 20px;
             border-radius: 8px;
-            border: 2px solid var(--accent);
+            margin-bottom: 25px;
+            border-left: 5px solid #1a2a6c;
+        }
+        select {
             width: 100%;
-            max-width: 400px;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
 
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
-
-        .service-box {
-            border: 2px solid #eee;
-            border-radius: 10px;
+        .service-item {
+            border: 2px solid #e0e0e0;
             padding: 15px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .service-box input {
-            position: absolute;
-            opacity: 0;
-        }
-
-        .service-box:hover { border-color: var(--accent); }
-
-        .service-box.active {
-            border-color: var(--accent);
-            background-color: #ebf5fb;
-        }
-
-        .service-label { font-weight: 600; font-size: 14px; margin-bottom: 5px; }
-        .service-price { color: var(--success); font-weight: bold; }
-
-        .total-display {
-            background: var(--primary);
-            color: white;
-            padding: 20px;
             border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+        }
+        .service-item input { position: absolute; opacity: 0; }
+        .service-item:hover { border-color: #1a2a6c; }
+        .service-item.selected {
+            border-color: #1a2a6c;
+            background-color: #e8f0fe;
+        }
+        .service-name { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
+        .service-price { display: block; color: #27ae60; font-size: 1.1em; font-weight: bold; }
+
+        /* Total Section */
+        .total-container {
+            background: #1a2a6c;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1.2rem;
         }
-        .total-amount { font-size: 1.8rem; font-weight: bold; }
+        .total-label { font-size: 1.2em; }
+        .total-amount { font-size: 2em; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="calc-wrapper">
+<div class="calculator-card">
     <div class="header">
-        <h2>Professional Service Fee Estimator</h2>
-        <p>Select your transaction volume and the services required</p>
+        <h2>Professional Fee Calculator</h2>
     </div>
 
-    <div class="range-section">
-        <label style="display:block; margin-bottom:10px; font-weight:bold;">Accounting Transaction Range</label>
-        <select id="rangeSelect" onchange="updateUI()">
-            <option value="0">0 - 50</option>
-            <option value="1">50 - 100</option>
-            <option value="2">100 - 150</option>
-            <option value="3">150 - 200</option>
-            <option value="4">200 - 250</option>
-            <option value="5">250 - 300</option>
-            <option value="6">300 - 350</option>
-            <option value="7">350 - 400</option>
+    <div class="range-box">
+        <label style="font-weight: bold; margin-bottom: 10px; display: block;">Step 1: Number of Transactions Select Karein</label>
+        <select id="transactionRange" onchange="refreshCalculator()">
+            <option value="0">0 - 50 Transactions</option>
+            <option value="1">50 - 100 Transactions</option>
+            <option value="2">100 - 150 Transactions</option>
+            <option value="3">150 - 200 Transactions</option>
+            <option value="4">200 - 250 Transactions</option>
+            <option value="5">250 - 300 Transactions</option>
+            <option value="6">300 - 350 Transactions</option>
+            <option value="7">350 - 400 Transactions</option>
         </select>
     </div>
 
-    <div class="services-grid" id="servicesContainer">
+    <label style="font-weight: bold; margin-bottom: 10px; display: block;">Step 2: Services Select Karein (Ek ya zyada)</label>
+    <div class="services-grid" id="servicesGrid">
         </div>
 
-    <div class
+    <div class="total-container">
+        <span class="total-label">Monthly Fees Estimate:</span>
+        <span class="total-amount" id="grandTotal">₹0</span>
+    </div>
+</div>
+
+<script>
+    // Excel Data mapping
+    const pricingData = [
+        { accounting: 3000, gstRet: 1000, gstAnn: 417, tds: 1000, esi: 1000, tdsCert: 1000, bs: 833, mis: 1000, stk: 1000, cma: 10000, prov: 1000, audit: 15000, roc: 5000 },
+        { accounting: 6000, gstRet: 1500, gstAnn: 833, tds: 1000, esi: 1000, tdsCert: 1500, bs: 1250, mis: 1500, stk: 1500, cma: 15000, prov: 1500, audit: 20000, roc: 5000 },
+        { accounting: 9000, gstRet: 1500, gstAnn: 833, tds: 1500, esi: 1000, tdsCert: 1500, bs: 1250, mis: 1500, stk: 1500, cma: 15000, prov: 3000, audit: 20000, roc: 8000 },
+        { accounting: 12000, gstRet: 1500, gstAnn: 833, tds: 1500, esi: 1000, tdsCert: 1500, bs: 1250, mis: 1500, stk: 1500, cma: 25000, prov: 5000, audit: 30000, roc: 10000 },
+        { accounting: 15000, gstRet: 2000, gstAnn: 833, tds: 2000, esi: 2000, tdsCert: 1500, bs: 1250, mis: 1500, stk: 1500, cma: 25000, prov: 5000, audit: 30000, roc: 10000 },
+        { accounting: 18000, gstRet: 2000, gstAnn: 833, tds: 2000, esi: 2000, tdsCert: 1500, bs: 2500, mis: 1500, stk: 1500, cma: 25000, prov: 5000, audit: 30000, roc: 10000 },
+        { accounting: 21000, gstRet: 2500, gstAnn: 833, tds: 2000, esi: 2000, tdsCert: 1500, bs: 2500, mis: 1500, stk: 1500, cma: 25000, prov: 5000, audit: 30000, roc: 10000 },
+        { accounting: 24000, gstRet: 2500, gstAnn: 833, tds: 2000, esi: 2000, tdsCert: 1500, bs: 2500, mis: 1500, stk: 1500, cma: 25000, prov: 5000, audit: 30000, roc: 10000 }
+    ];
+
+    const serviceMap = {
+        accounting: "Accounting Fee", gstRet: "GST Return", gstAnn: "GST Annual", tds: "TDS Return",
+        esi: "ESI/PF", tdsCert: "TDS Cert", bs: "Balance Sheet", mis: "MIS", 
+        stk: "Stk Stmt", cma: "CMA Data", prov: "Prov BS", audit: "Audit/ITR", roc: "ROC"
+    };
+
+    function refreshCalculator() {
+        const rangeIdx = document.getElementById('transactionRange').value;
+        const grid = document.getElementById('servicesGrid');
+        const currentData = pricingData[rangeIdx];
+        
+        // Pehle se selected services ko yaad rakhein
+        const selectedServices = Array.from(document.querySelectorAll('.service-item input:checked')).map(el => el.id);
+        
+        grid.innerHTML = ''; // Grid clear karein
+
+        for (let key in serviceMap) {
+            const isChecked = selectedServices.includes(key);
+            const div = document.createElement('label');
+            div.className = `service-item ${isChecked ? 'selected' : ''}`;
+            div.innerHTML = `
+                <input type="checkbox" id="${key}" ${isChecked ? 'checked' : ''} onchange="updateTotal(this)">
+                <span class="service-name">${serviceMap[key]}</span>
+                <span class="service-price">₹${currentData[key]}</span>
+            `;
+            grid.appendChild(div);
+        }
+        updateTotal();
+    }
+
+    function updateTotal(element) {
+        if(element) {
+            element.parentElement.classList.toggle('selected', element.checked);
+        }
+
+        const rangeIdx = document.getElementById('transactionRange').value;
+        const currentPrices = pricingData[rangeIdx];
+        const checkboxes = document.querySelectorAll('.service-item input:checked');
+        
+        let total = 0;
+        checkboxes.forEach(cb => {
+            total += currentPrices[cb.id];
+        });
+
+        document.getElementById('grandTotal').innerText = '₹' + total.toLocaleString('en-IN');
+    }
+
+    // Initial load
+    refreshCalculator();
+</script>
+
+</body>
+</html>
