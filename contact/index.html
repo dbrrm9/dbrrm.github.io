@@ -37,3 +37,126 @@
     <a href="../contact/">Contact</a>
 </nav>
     </header>
+
+
+    <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f7f6; }
+        .contact-container { max-width: 1000px; margin: 50px auto; display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
+        
+        /* Left Side: Address */
+        .address-card { flex: 1; min-width: 300px; background: #1a2a6c; color: white; padding: 40px; border-radius: 12px; }
+        .address-card h2 { border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .info-item { margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+        
+        /* Right Side: Form */
+        .form-card { flex: 2; min-width: 350px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        button { background: #27ae60; color: white; padding: 15px 30px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; width: 100%; }
+        button:hover { background: #219150; }
+
+        /* Floating WhatsApp Bar */
+        .whatsapp-bar {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-container">
+    <div class="address-card">
+        <h2>Contact Us</h2>
+        <p>Humein sampark karein ya niche diye gaye address par aayein.</p>
+        <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Noida, Uttar Pradesh, India (Delhi NCR)</span>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <span>+91 97164 06865</span>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>contact@dbrrm.com</span>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <form id="contactForm">
+            <div class="form-group">
+                <label>Naam / Company Naam</label>
+                <input type="text" name="name" required placeholder="Apna naam likhein">
+            </div>
+            <div class="form-group">
+                <label>Email ID</label>
+                <input type="email" name="email" required placeholder="example@mail.com">
+            </div>
+            <div class="form-group">
+                <label>Mobile No.</label>
+                <input type="tel" name="mobile" required placeholder="98XXXXXXXX">
+            </div>
+            <div class="form-group">
+                <label>Message (Max 3000 words)</label>
+                <textarea name="message" rows="6" maxlength="15000" placeholder="Aapka sandesh..."></textarea>
+            </div>
+            <button type="submit" id="submitBtn">Send Message</button>
+        </form>
+        <div id="msgResponse" style="margin-top:15px; text-align:center; display:none;"></div>
+    </div>
+</div>
+
+<a href="https://wa.me/919716406865?text=Hello, I need financial consultancy." class="whatsapp-bar" target="_blank">
+    <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+    <span>Contact: +91 9716406865</span>
+</a>
+
+<script>
+    const scriptURL = 'YOUR_SCRIPT_URL_HERE'; // Yahan apna Google Apps Script URL dalein
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('submitBtn');
+    const res = document.getElementById('msgResponse');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerText = "Sending...";
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                res.style.display = "block";
+                res.innerHTML = "<span style='color:green'>Dhanyawad! Aapki details save ho gayi hain.</span>";
+                form.reset();
+                btn.disabled = false;
+                btn.innerText = "Send Message";
+            })
+            .catch(error => {
+                res.style.display = "block";
+                res.innerHTML = "<span style='color:red'>Error! Kripya dobara koshish karein.</span>";
+                btn.disabled = false;
+                btn.innerText = "Send Message";
+            });
+    });
+</script>
+
+</body>
+</html>
