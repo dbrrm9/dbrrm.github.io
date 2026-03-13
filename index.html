@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DBRRM Financial Services | Professional Accounting</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* CSS Variables for easy color management */
         :root {
             --dark-blue: #001f3f;
             --accent-gold: #c5a059;
@@ -16,39 +17,62 @@
         }
 
         body { font-family: 'Poppins', sans-serif; margin: 0; background-color: var(--light-bg); color: var(--black); line-height: 1.6; }
-        
-        /* Header & Logo Section */
         header { background-color: var(--white); padding: 25px 0; text-align: center; border-bottom: 4px solid var(--dark-blue); }
         .logo-text { margin: 0; font-size: 2.8em; font-weight: 700; color: var(--dark-blue); letter-spacing: 1px; text-transform: uppercase; }
         .logo-sub { font-size: 1em; color: var(--accent-gold); font-weight: 400; letter-spacing: 3px; }
 
-        /* Navigation Bar */
-        .navbar { background-color: var(--black); sticky: top; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; padding: 5px 0; }
+        .navbar { background-color: var(--black); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; padding: 5px 0; }
         .navbar a, .dropbtn { color: var(--white); padding: 15px 25px; text-decoration: none; font-weight: 500; transition: 0.3s; cursor: pointer; border: none; background: none; font-family: inherit; font-size: 16px; }
         .navbar a:hover, .dropdown:hover .dropbtn { color: var(--accent-gold); }
 
-        /* Dropdown Styling */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-content { display: none; position: absolute; background-color: var(--white); min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1); border-radius: 0 0 8px 8px; overflow: hidden; }
         .dropdown-content a { color: var(--black); padding: 12px 20px; border-bottom: 1px solid #eee; font-size: 14px; text-align: left; }
         .dropdown-content a:hover { background-color: var(--dark-blue); color: var(--white); }
         .dropdown:hover .dropdown-content { display: block; }
 
-        /* Hero Section (Attractive Banner) */
         .hero { background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), url('https://images.unsplash.com/photo-1454165833762-02c67b679718?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
                 background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
         .hero h2 { font-size: 3em; margin-bottom: 20px; }
         .hero p { font-size: 1.2em; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
-        .cta-btn { background-color: var(--accent-gold); color: white; padding: 15px 40px; text-decoration: none; font-weight: 600; border-radius: 50px; transition: 0.3s; }
+        .cta-btn { background-color: var(--accent-gold); color: white; padding: 15px 40px; text-decoration: none; font-weight: 600; border-radius: 50px; transition: 0.3s; display: inline-block; }
         .cta-btn:hover { background-color: #a88545; transform: translateY(-3px); }
 
-        /* Features Section */
         .services-preview { padding: 60px 20px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .service-card { background: white; padding: 40px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border-top: 5px solid var(--dark-blue); }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .service-card h3 { color: var(--dark-blue); margin-bottom: 15px; }
 
         footer { background: var(--black); color: white; text-align: center; padding: 30px; margin-top: 50px; }
+
+        /* WhatsApp Button CSS */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: translateY(-3px);
+            color: white;
+        }
+        @media screen and (max-width: 768px) {
+            .whatsapp-float span { display: none; }
+            .whatsapp-float { padding: 15px; border-radius: 50%; }
+        }
     </style>
 </head>
 <body>
@@ -58,12 +82,9 @@
     <div class="logo-sub">FINANCIAL SERVICES</div>
 </header>
 
-
-
 <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="about/index.html">About</a> 
-    
     <div class="dropdown">
         <button class="dropbtn">Services ▾</button>
         <div class="dropdown-content">
@@ -86,13 +107,13 @@
 <section class="hero">
     <h2>Smart Financial Solutions</h2>
     <p>Empowering your business with expert accounting, taxation, and legal compliance services. We handle the numbers, you handle the growth.</p>
-    <a href="/contact/" class="cta-btn">Get Free Consultation</a>
+    <a href="contact/index.html" class="cta-btn">Get Free Consultation</a>
 </section>
 
 <section class="services-preview">
     <div class="service-card">
-        <h3> Accounting,GST & Taxation</h3>
-        <p>Hassle-free Accounting,GST filing, reconciliation, and tax planning for your business.</p>
+        <h3>Accounting, GST & Taxation</h3>
+        <p>Hassle-free Accounting, GST filing, reconciliation, and tax planning for your business.</p>
     </div>
     <div class="service-card">
         <h3>Audit & Assurance</h3>
@@ -108,59 +129,10 @@
     <p>&copy; 2026 DBRRM Financial Services. All Rights Reserved.</p>
 </footer>
 
-</body>
-</html>
-
-<style>
-    .whatsapp-float {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25d366;
-        color: white;
-        padding: 12px 25px;
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        z-index: 10000;
-        transition: all 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-        background-color: #128c7e;
-        transform: translateY(-3px);
-        color: white;
-    }
-
-    /* Mobile view ke liye chota icon (Optional) */
-    @media screen and (max-width: 768px) {
-        .whatsapp-float span {
-            display: none; /* Mobile par sirf icon dikhega, text nahi */
-        }
-        .whatsapp-float {
-            padding: 15px;
-            border-radius: 50%;
-        }
-    }
-</style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 <a href="https://wa.me/919716406865?text=Hello! I am interested in your services." class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
     <span>Chat with us</span>
 </a>
 
-
-
-
-
-
-
-
-
+</body>
+</html>
