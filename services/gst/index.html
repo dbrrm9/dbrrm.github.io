@@ -63,5 +63,51 @@
 </body>
 </html>
 
+<style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 10000;
+        transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+        background-color: #128c7e;
+        transform: translateY(-3px);
+        color: white;
+    }
+
+    /* Mobile view ke liye chota icon (Optional) */
+    @media screen and (max-width: 768px) {
+        .whatsapp-float span {
+            display: none; /* Mobile par sirf icon dikhega, text nahi */
+        }
+        .whatsapp-float {
+            padding: 15px;
+            border-radius: 50%;
+        }
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<a href="https://wa.me/919716406865?text=Hello! I am interested in your services." class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+    <span>Chat with us</span>
+</a>
+
+
 
 
