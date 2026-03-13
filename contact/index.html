@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | DBRRM Financial Services</title>
+    <title>Contact Us | DBRRM Financial Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #f4f7f6; }
+        header { background: #fff; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo-text { font-size: 28px; font-weight: 700; color: #1a2a6c; margin: 0; }
+        .logo-sub { font-size: 14px; letter-spacing: 2px; color: #3498db; }
+        
+        .contact-container { max-width: 1100px; margin: 50px auto; display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
+        .address-card { flex: 1; min-width: 300px; background: #1a2a6c; color: white; padding: 40px; border-radius: 12px; }
+        .address-card h2 { border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 30px; }
+        .info-item { margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        
+        .form-card { flex: 2; min-width: 350px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; transition: 0.3s; }
+        input:focus, textarea:focus { border-color: #3498db; outline: none; box-shadow: 0 0 5px rgba(52,152,219,0.2); }
+        
+        button { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 600; width: 100%; transition: 0.3s; }
+        button:hover { background: #219150; transform: translateY(-2px); }
+        button:disabled { background: #bdc3c7; cursor: not-allowed; }
+
+        .whatsapp-bar { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; font-weight: bold; }
+    </style>
 </head>
 <body>
 
@@ -14,82 +37,12 @@
     <div class="logo-sub">FINANCIAL SERVICES</div>
 </header>
 
-<nav class="navbar">
-    <a href="../index.html">Home</a>
-    <a href="index.html" class="active">About</a>
-    <div class="dropdown">
-        <button class="dropbtn">Services ▾</button>
-        <div class="dropdown-content">
-            <a href="../services/accounting/">Accounting</a>
-            <a href="../services/gst/">GST</a>
-            <a href="../services/tds/">TDS</a>
-            <a href="../services/esi-pf/">ESI/PF</a>
-            <a href="../services/cma/">CMA</a>
-            <a href="../services/balance-sheet/">Balance Sheet</a>
-            <a href="../services/audit/">Audit</a>
-            <a href="../services/itr/">Income Tax (ITR)</a>
-            <a href="../services/registration/">Registration</a>
-            
-        </div>
-    </div>
-    <a href="../price-list/">Price List</a>
-    <a href="../loan/">Loan</a>
-    <a href="../contact/">Contact</a>
-</nav>
-    </header>
-
-
-    <!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f7f6; }
-        .contact-container { max-width: 1000px; margin: 50px auto; display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
-        
-        /* Left Side: Address */
-        .address-card { flex: 1; min-width: 300px; background: #1a2a6c; color: white; padding: 40px; border-radius: 12px; }
-        .address-card h2 { border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .info-item { margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
-        
-        /* Right Side: Form */
-        .form-card { flex: 2; min-width: 350px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-        button { background: #27ae60; color: white; padding: 15px 30px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; width: 100%; }
-        button:hover { background: #219150; }
-
-        /* Floating WhatsApp Bar */
-        .whatsapp-bar {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-
 <div class="contact-container">
     <div class="address-card">
         <h2>Contact Us</h2>
-        <p>Humein sampark karein ya niche diye gaye address par aayein.</p>
         <div class="info-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>Noida, Uttar Pradesh, India (Delhi NCR)</span>
+            <span>Noida, Uttar Pradesh (Delhi NCR)</span>
         </div>
         <div class="info-item">
             <i class="fas fa-phone"></i>
@@ -104,7 +57,7 @@
     <div class="form-card">
         <form id="contactForm">
             <div class="form-group">
-                <label>Naam / Company Naam</label>
+                <label>Pura Naam / Company Naam</label>
                 <input type="text" name="name" required placeholder="Apna naam likhein">
             </div>
             <div class="form-group">
@@ -112,79 +65,61 @@
                 <input type="email" name="email" required placeholder="example@mail.com">
             </div>
             <div class="form-group">
-                <label>Mobile No.</label>
+                <label>Mobile Number</label>
                 <input type="tel" name="mobile" required placeholder="98XXXXXXXX">
             </div>
             <div class="form-group">
-                <label>Message (Max 3000 words)</label>
-                <textarea name="message" rows="6" maxlength="15000" placeholder="Aapka sandesh..."></textarea>
+                <label>Aapka Sandesh</label>
+                <textarea name="message" rows="5" placeholder="Kripya apni requirement batayein..."></textarea>
             </div>
             <button type="submit" id="submitBtn">Send Message</button>
         </form>
-        <div id="msgResponse" style="margin-top:15px; text-align:center; display:none;"></div>
+        <div id="msgResponse" style="margin-top:20px; text-align:center; display:none; font-weight:600;"></div>
     </div>
 </div>
 
-<a href="https://wa.me/919716406865?text=Hello, I need financial consultancy." class="whatsapp-bar" target="_blank">
+<a href="https://wa.me/919716406865" class="whatsapp-bar" target="_blank">
     <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
-    <span>Contact: +91 9716406865</span>
+    <span>Contact on WhatsApp</span>
 </a>
 
 <script>
-    const scriptURL = "https://docs.google.com/spreadsheets/d/12lg-Gi1uhoLZSw4TkV9iyeiLksfC4CohqrrhRDPCLgk/edit?gid=0#gid=0"    const form = document.getElementById('contactForm');
+    // Aapka Google Apps Script Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby99aXBLKQtylnrvaPPQiR4Y1jRJnjhTKqV9taB2VakJMZn-aAFqn2dTEx4at3arZhM0Q/exec';
+    
+    const form = document.getElementById('contactForm');
     const btn = document.getElementById('submitBtn');
     const res = document.getElementById('msgResponse');
 
     form.addEventListener('submit', e => {
         e.preventDefault();
         btn.disabled = true;
-        btn.innerText = "Sending...";
+        btn.innerText = "Processing...";
+        res.style.display = "none";
         
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                res.style.display = "block";
-                res.innerHTML = "<span style='color:green'>Dhanyawad! Aapki details save ho gayi hain.</span>";
-                form.reset();
-                btn.disabled = false;
-                btn.innerText = "Send Message";
-            })
-            .catch(error => {
-                res.style.display = "block";
-                res.innerHTML = "<span style='color:red'>Error! Kripya dobara koshish karein.</span>";
-                btn.disabled = false;
-                btn.innerText = "Send Message";
-            });
+        // Data send karne ki process
+        fetch(scriptURL, { 
+            method: 'POST', 
+            body: new FormData(form)
+        })
+        .then(response => {
+            res.style.display = "block";
+            res.style.color = "#27ae60";
+            res.innerHTML = "Dhanyawad! Aapki details DBRRM team ko mil gayi hain.";
+            form.reset();
+            btn.disabled = false;
+            btn.innerText = "Send Message";
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            res.style.display = "block";
+            res.style.color = "#e74c3c";
+            res.innerHTML = "Error! Kripya dobara koshish karein.";
+            btn.disabled = false;
+            btn.innerText = "Send Message";
+        });
     });
-</script>
-
-    <script>
-    // GOOGLE APPS SCRIPT KA URL YAHAN DALEIN
-    const scriptURL = 'https://script.google.com/macros/s/AKfycby99aXBLKQtylnrvaPPQiR4Y1jRJnjhTKqV9taB2VakJMZn-aAFqn2dTEx4at3arZhM0Q/exec'
-    const form = document.getElementById('leadForm')
-    const btn = document.getElementById('submitBtn')
-
-    form.addEventListener('submit', e => {
-        e.preventDefault()
-        btn.disabled = true
-        btn.innerHTML = "Submitting..."
-        
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                alert("Dhanyawad! DBRRM Financial Services team aapse jald hi sampark karegi.")
-                btn.disabled = false
-                btn.innerHTML = "Submit Inquiry"
-                form.reset()
-            })
-            .catch(error => {
-                console.error('Error!', error.message)
-                alert("Maafi chahte hain! Kuch galti hui hai.")
-                btn.disabled = false
-                btn.innerHTML = "Submit Inquiry"
-            })
-    })
 </script>
 
 </body>
 </html>
-
-
