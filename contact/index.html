@@ -157,6 +157,34 @@
     });
 </script>
 
+    <script>
+    // GOOGLE APPS SCRIPT KA URL YAHAN DALEIN
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby99aXBLKQtylnrvaPPQiR4Y1jRJnjhTKqV9taB2VakJMZn-aAFqn2dTEx4at3arZhM0Q/exec'
+    const form = document.getElementById('leadForm')
+    const btn = document.getElementById('submitBtn')
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        btn.disabled = true
+        btn.innerHTML = "Submitting..."
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                alert("Dhanyawad! DBRRM Financial Services team aapse jald hi sampark karegi.")
+                btn.disabled = false
+                btn.innerHTML = "Submit Inquiry"
+                form.reset()
+            })
+            .catch(error => {
+                console.error('Error!', error.message)
+                alert("Maafi chahte hain! Kuch galti hui hai.")
+                btn.disabled = false
+                btn.innerHTML = "Submit Inquiry"
+            })
+    })
+</script>
+
 </body>
 </html>
+
 
