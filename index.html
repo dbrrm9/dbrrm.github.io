@@ -4,142 +4,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="aDrWuS4A-HZ3TZzpt2iShMMGkFXoBWYMLBKKh9TtVD0" />
-    <title>DBRRM Financial Services | Professional Accounting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>DBRRM Financial Services | Professional Accounting & Tax Experts</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --dark-blue: #001f3f;
             --accent-gold: #c5a059;
-            --light-bg: #f8f9fa;
-            --black: #1a1a1a;
+            --light-blue: #e6f0fa;
             --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --transition: all 0.3s ease;
         }
 
-        body { font-family: 'Poppins', sans-serif; margin: 0; background-color: var(--light-bg); color: var(--black); line-height: 1.6; }
-        header { background-color: var(--white); padding: 25px 0; text-align: center; border-bottom: 4px solid var(--dark-blue); }
-        .logo-text { margin: 0; font-size: 2.8em; font-weight: 700; color: var(--dark-blue); letter-spacing: 1px; text-transform: uppercase; }
-        .logo-sub { font-size: 1em; color: var(--accent-gold); font-weight: 400; letter-spacing: 3px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: #fcfcfc; color: var(--text-dark); line-height: 1.6; }
 
-        .navbar { background-color: var(--black); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; padding: 5px 0; }
-        .navbar a, .dropbtn { color: var(--white); padding: 15px 25px; text-decoration: none; font-weight: 500; transition: 0.3s; cursor: pointer; border: none; background: none; font-family: inherit; font-size: 16px; }
-        .navbar a:hover, .dropdown:hover .dropbtn { color: var(--accent-gold); }
+        /* Header & Navigation */
+        header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--light-blue); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { text-decoration: none; }
+        .logo-text { font-size: 28px; font-weight: 700; color: var(--dark-blue); letter-spacing: 1px; }
+        .logo-sub { font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; font-weight: 600; text-transform: uppercase; }
 
-        .dropdown { position: relative; display: inline-block; }
-        .dropdown-content { display: none; position: absolute; background-color: var(--white); min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1); border-radius: 0 0 8px 8px; overflow: hidden; }
-        .dropdown-content a { color: var(--black); padding: 12px 20px; border-bottom: 1px solid #eee; font-size: 14px; text-align: left; }
-        .dropdown-content a:hover { background-color: var(--dark-blue); color: var(--white); }
+        .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--dark-blue); font-weight: 500; font-size: 15px; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        /* Dropdown Customization */
+        .dropdown { position: relative; }
+        .dropbtn { background: none; border: none; font-family: inherit; font-weight: 500; font-size: 15px; color: var(--dark-blue); cursor: pointer; padding: 10px 0; }
+        .dropdown-content { display: none; position: absolute; background: var(--white); min-width: 220px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px; top: 100%; left: 0; }
+        .dropdown-content a { color: var(--text-dark); padding: 12px 20px; display: block; border-bottom: 1px solid #f0f0f0; }
+        .dropdown-content a:hover { background: var(--light-blue); color: var(--dark-blue); }
         .dropdown:hover .dropdown-content { display: block; }
 
-        .hero { background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), url('https://images.unsplash.com/photo-1454165833762-02c67b679718?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
-                background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
-        .hero h2 { font-size: 3em; margin-bottom: 20px; }
-        .hero p { font-size: 1.2em; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
-        .cta-btn { background-color: var(--accent-gold); color: white; padding: 15px 40px; text-decoration: none; font-weight: 600; border-radius: 50px; transition: 0.3s; display: inline-block; }
-        .cta-btn:hover { background-color: #a88545; transform: translateY(-3px); }
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, rgba(0,31,63,0.95) 0%, rgba(0,31,63,0.8) 100%), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center; padding: 120px 8% 100px; color: var(--white); display: flex; align-items: center; min-height: 80vh; }
+        .hero-content { max-width: 700px; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; font-weight: 700; }
+        .hero h1 span { color: var(--accent-gold); }
+        .hero p { font-size: 1.1rem; margin-bottom: 35px; opacity: 0.9; line-height: 1.8; }
+        
+        .btn-group { display: flex; gap: 15px; }
+        .btn-primary { background: var(--accent-gold); color: white; padding: 14px 35px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: var(--transition); }
+        .btn-primary:hover { background: #a88545; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4); }
+        .btn-secondary { border: 2px solid var(--white); color: white; padding: 12px 35px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: var(--transition); }
+        .btn-secondary:hover { background: var(--white); color: var(--dark-blue); }
 
-        .services-preview { padding: 60px 20px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .service-card { background: white; padding: 40px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border-top: 5px solid var(--dark-blue); }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .service-card h3 { color: var(--dark-blue); margin-bottom: 15px; }
+        /* Stats Section */
+        .stats { padding: 50px 8%; background: var(--white); display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: -50px; border-radius: 10px; position: relative; z-index: 10; width: 84%; margin-left: auto; margin-right: auto; }
+        .stat-item { text-align: center; }
+        .stat-item h3 { font-size: 2.5rem; color: var(--dark-blue); margin-bottom: 5px; }
+        .stat-item p { color: var(--accent-gold); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; }
 
-        footer { background: var(--black); color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        /* Services Section */
+        .section-padding { padding: 100px 8%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--dark-blue); margin-bottom: 15px; }
+        .section-header p { color: #666; max-width: 600px; margin: 0 auto; }
 
-        /* WhatsApp Button CSS */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 10000;
-            transition: all 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            background-color: #128c7e;
-            transform: translateY(-3px);
-            color: white;
-        }
-        @media screen and (max-width: 768px) {
-            .whatsapp-float span { display: none; }
-            .whatsapp-float { padding: 15px; border-radius: 50%; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: var(--white); padding: 40px; border-radius: 12px; transition: var(--transition); border-bottom: 4px solid transparent; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .service-card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent-gold); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .service-card i { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px; }
+        .service-card h3 { color: var(--dark-blue); margin-bottom: 15px; font-size: 1.4rem; }
+        .service-card p { color: #555; font-size: 0.95rem; }
+
+        /* Why Choose Us Section */
+        .why-us { background-color: var(--dark-blue); color: white; display: flex; align-items: center; flex-wrap: wrap; }
+        .why-us-content { flex: 1; padding: 8%; min-width: 350px; }
+        .why-us-image { flex: 1; background: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80') center/cover; min-height: 500px; }
+        .feature-list { list-style: none; margin-top: 30px; }
+        .feature-list li { margin-bottom: 20px; display: flex; gap: 15px; }
+        .feature-list i { color: var(--accent-gold); margin-top: 5px; }
+
+        /* Footer */
+        footer { background: #0a0a0a; color: white; padding: 60px 8% 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; border-bottom: 1px solid #333; padding-bottom: 40px; }
+        .footer-col h4 { margin-bottom: 25px; color: var(--accent-gold); }
+        .footer-col p, .footer-col li { color: #bbb; font-size: 14px; margin-bottom: 10px; }
+        .footer-bottom { text-align: center; padding-top: 30px; font-size: 14px; color: #777; }
+
+        /* WhatsApp Button */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 9999; transition: var(--transition); }
+        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.05); color: white; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* Mobile menu can be added with JS */
+            .stats { width: 95%; }
+            .hero { text-align: center; }
+            .btn-group { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-text">DBRRM</div>
-    <div class="logo-sub">FINANCIAL SERVICES</div>
+    <a href="index.html" class="logo">
+        <div class="logo-text">DBRRM</div>
+        <div class="logo-sub">FINANCIAL SERVICES</div>
+    </a>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about/index.html">About</a></li>
+            <li class="dropdown">
+                <button class="dropbtn">Services <i class="fa fa-chevron-down" style="font-size: 10px;"></i></button>
+                <div class="dropdown-content">
+                    <a href="services/accounting/index.html">Accounting</a>
+                    <a href="services/gst/index.html">GST Filing</a>
+                    <a href="services/TDS/index.html">TDS Services</a>
+                    <a href="services/esic-pf/index.html">ESI & PF</a>
+                    <a href="services/cma/index.html">CMA Report</a>
+                    <a href="services/income tax/index.html">Income Tax (ITR)</a>
+                    <a href="services/registration/index.html">Business Registration</a>
+                </div>
+            </li>
+            <li><a href="price-list/index.html">Pricing</a></li>
+            <li><a href="contact/index.html">Contact</a></li>
+            <li><a href="contact/index.html" class="btn-primary" style="padding: 10px 20px;">Consult Now</a></li>
+        </ul>
+    </nav>
 </header>
 
-<nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="about/index.html">About</a> 
-    <div class="dropdown">
-        <button class="dropbtn">Services ▾</button>
-        <div class="dropdown-content">
-            <a href="services/accounting/index.html">Accounting</a>
-            <a href="services/gst/index.html">GST</a>
-            <a href="services/TDS/index.html">TDS</a>
-            <a href="services/esic-pf/index.html">ESI & PF</a>
-            <a href="services/cma/index.html">CMA Report</a>
-            <a href="services/balance sheet/index.html">Balance Sheet</a>
-            <a href="services/audit/index.html">Audit</a>
-            <a href="services/income tax/index.html">Income Tax (ITR)</a>
-            <a href="services/registration/index.html">Registration</a>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Simplify Your <span>Financial</span> Future</h1>
+        <p>Premium accounting, tax compliance, and financial advisory services tailored for businesses and individuals. Let our experts handle the numbers while you grow your dreams.</p>
+        <div class="btn-group">
+            <a href="services/registration/index.html" class="btn-primary">Our Services</a>
+            <a href="contact/index.html" class="btn-secondary">Contact Us</a>
         </div>
     </div>
-    <a href="price-list/index.html">Price List</a>
-    <a href="loan/index.html">Loan</a>
-    <a href="contact/index.html">Contact</a>
-</nav>
-
-<section class="hero">
-    <h2>Smart Financial Solutions</h2>
-    <p>Empowering your business with expert accounting, taxation, and legal compliance services. We handle the numbers, you handle the growth.</p>
-    <a href="contact/index.html" class="cta-btn">Get Free Consultation</a>
 </section>
 
-<section class="services-preview">
-    <div class="service-card">
-        <h3>Accounting, GST & Taxation</h3>
-        <p>Hassle-free Accounting, GST filing, reconciliation, and tax planning for your business.</p>
+<section class="stats">
+    <div class="stat-item">
+        <h3>10+</h3>
+        <p>Years Experience</p>
     </div>
-    <div class="service-card">
-        <h3>Audit & Assurance</h3>
-        <p>Comprehensive audit services to ensure financial accuracy and compliance.</p>
+    <div class="stat-item">
+        <h3>500+</h3>
+        <p>Happy Clients</p>
     </div>
-    <div class="service-card">
-        <h3>Loan Assistance</h3>
-        <p>Expert guidance and documentation for business and personal loans.</p>
+    <div class="stat-item">
+        <h3>15+</h3>
+        <p>Expert Consultants</p>
     </div>
+    <div class="stat-item">
+        <h3>100%</h3>
+        <p>Compliance Rate</p>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="section-header">
+        <h2>Expert Financial Solutions</h2>
+        <p>From startups to established enterprises, we provide comprehensive financial support to keep you compliant and profitable.</p>
+    </div>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <i class="fas fa-calculator"></i>
+            <h3>GST & Taxation</h3>
+            <p>Accurate GST registration, monthly filing, and strategic tax planning to minimize liabilities.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Accounting Services</h3>
+            <p>Professional bookkeeping and financial statement preparation using modern software.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <h3>Income Tax (ITR)</h3>
+            <p>End-to-end ITR filing for individuals, firms, and companies with expert audit support.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-building"></i>
+            <h3>Company Registration</h3>
+            <p>Start your business right with PVT LTD, LLP, or MSME registration services.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-users-gear"></i>
+            <h3>ESI & PF Compliance</h3>
+            <p>Hassle-free management of employee benefits and government labor law compliances.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-hand-holding-dollar"></i>
+            <h3>Loan Assistance</h3>
+            <p>Project reports and CMA data preparation for quick business and personal loan approvals.</p>
+        </div>
+    </div>
+</section>
+
+<section class="why-us">
+    <div class="why-us-content">
+        <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Why Partner With DBRRM?</h2>
+        <p>We don't just manage books; we provide the financial clarity you need to make confident business decisions.</p>
+        <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> <div><strong>Expert Professionals:</strong> Highly qualified accountants and tax consultants.</div></li>
+            <li><i class="fas fa-check-circle"></i> <div><strong>Timely Compliance:</strong> No more penalties. We ensure every deadline is met.</div></li>
+            <li><i class="fas fa-check-circle"></i> <div><strong>Data Security:</strong> Your financial data is protected with high-level encryption.</div></li>
+            <li><i class="fas fa-check-circle"></i> <div><strong>Transparent Pricing:</strong> No hidden costs, just honest professional service.</div></li>
+        </ul>
+    </div>
+    <div class="why-us-image"></div>
 </section>
 
 <footer>
-    <p>&copy; 2026 DBRRM Financial Services. All Rights Reserved.</p>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="logo-text" style="color: white; margin-bottom: 10px;">DBRRM</div>
+            <p>Your trusted partner for accounting, taxation, and business growth. Committed to excellence since 2016.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul style="list-style: none;">
+                <li><a href="about/index.html" style="color:#bbb; text-decoration:none;">About Us</a></li>
+                <li><a href="services/gst/index.html" style="color:#bbb; text-decoration:none;">GST Services</a></li>
+                <li><a href="price-list/index.html" style="color:#bbb; text-decoration:none;">Price List</a></li>
+                <li><a href="contact/index.html" style="color:#bbb; text-decoration:none;">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Info</h4>
+            <p><i class="fas fa-phone" style="color:var(--accent-gold); margin-right:10px;"></i> +91 97164 06865</p>
+            <p><i class="fas fa-envelope" style="color:var(--accent-gold); margin-right:10px;"></i> info@dbrrm.com</p>
+            <p><i class="fas fa-location-dot" style="color:var(--accent-gold); margin-right:10px;"></i> New Delhi, India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 DBRRM Financial Services. All Rights Reserved.</p>
+    </div>
 </footer>
 
-<a href="https://wa.me/919716406865?text=Hello! I am interested in your services." class="whatsapp-float" target="_blank">
+<a href="https://wa.me/919716406865?text=Hello! I need expert financial advice." class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
-    <span>Chat with us</span>
+    <span>Free Consultation</span>
 </a>
 
 </body>
 </html>
-<head><body><meta name="google-site-verification" content="aDrWuS4A-HZ3TZzpt2iShMMGkFXoBWYMLBKKh9TtVD0" /></body></head>
-
-
-
-
-
