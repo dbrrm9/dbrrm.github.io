@@ -1,38 +1,166 @@
-<!-- HEADER -->
-<header>
-    <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <div class="dropdown">
-        <button class="dropbtn">Services ▾</button>
-        <div class="dropdown-content">
-            <a href="accounting.html">Accounting</a>
-            <a href="gst.html">GST</a>
-            <a href="tds.html">TDS</a>
-            <a href="income-tax.html">Income Tax</a>
-            <a href="esi-pf.html">ESI & PF</a>
-            <a href="mis.html">MIS</a>
-            <a href="cma.html">CMA</a>
-            <a href="balance-sheet.html">Balance Sheet</a>
-            <a href="audit.html">Audit</a>
-            <a href="cases.html">Cases</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Services | DBRRM Financial Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Base styles from your main page */
+        :root { --dark-blue: #001f3f; --accent-gold: #c5a059; --light-blue: #e6f0fa; --white: #ffffff; --text-dark: #1a1a1a; }
+        body { font-family: 'Poppins', sans-serif; background-color: #fcfcfc; margin: 0; }
+        
+        /* Loan Specific Styles */
+        .loan-container { padding: 60px 8%; }
+        .loan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 50px; }
+        
+        .loan-card { 
+            background: white; border: 1px solid #eee; padding: 25px; border-radius: 10px; 
+            text-align: center; transition: 0.3s; cursor: pointer;
+        }
+        .loan-card:hover { border-color: var(--accent-gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-5px); }
+        .loan-card i { font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px; }
+        .loan-card h3 { font-size: 1.1rem; color: var(--dark-blue); margin-bottom: 10px; }
+        .apply-small-btn { 
+            background: var(--dark-blue); color: white; padding: 8px 15px; 
+            border-radius: 5px; text-decoration: none; font-size: 0.8rem; display: inline-block;
+        }
+
+        /* Form Section */
+        .form-section { background: var(--light-blue); padding: 60px 8%; border-radius: 20px; }
+        .loan-form { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit;
+        }
+        .submit-btn { 
+            width: 100%; background: var(--accent-gold); color: white; border: none; 
+            padding: 15px; font-size: 1rem; font-weight: 600; border-radius: 5px; cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+
+<section class="loan-container">
+    <h2 style="text-align:center; color: var(--dark-blue); margin-bottom: 40px;">Select Your Loan Requirement</h2>
+    
+    <div class="loan-grid">
+        <div class="loan-card" onclick="setLoanType('Business Loan')">
+            <i class="fas fa-briefcase"></i>
+            <h3>Business Loan</h3>
+            <span class="apply-small-btn">Apply Now</span>
+        </div>
+        <div class="loan-card" onclick="setLoanType('Working Capital CC/TL')">
+            <i class="fas fa-chart-line"></i>
+            <h3>Working Capital (CC/TL)</h3>
+            <span class="apply-small-btn">Apply Now</span>
+        </div>
+        <div class="loan-card" onclick="setLoanType('Machinery Loan')">
+            <i class="fas fa-industry"></i>
+            <h3>Machinery Loan</h3>
+            <span class="apply-small-btn">Apply Now</span>
+        </div>
+        <div class="loan-card" onclick="setLoanType('Personal Loan')">
+            <i class="fas fa-user"></i>
+            <h3>Personal Loan</h3>
+            <span class="apply-small-btn">Apply Now</span>
+        </div>
+        <div class="loan-card" onclick="setLoanType('Home Loan')">
+            <i class="fas fa-home"></i>
+            <h3>Home Loan</h3>
+            <span class="apply-small-btn">Apply Now</span>
+        </div>
+        <div class="loan-card" onclick="setLoanType('Vehicle Loan')">
+            <i class="fas fa-car"></i>
+            <h3>Vehicle Loan</h3>
+            <span class="apply-small-btn">Apply Now</span>
+        </div>
+        <div class="loan-card" onclick="setLoanType('Bill Discounting')">
+            <i class="fas fa-file-invoice"></i>
+            <h3>Bill Discounting</h3>
+            <span class="apply-small-btn">Apply Now</span>
+        </div>
+        <div class="loan-card" onclick="setLoanType('Export Packing Credit')">
+            <i class="fas fa-ship"></i>
+            <h3>Export Packing Credit</h3>
+            <span class="apply-small-btn">Apply Now</span>
         </div>
     </div>
-    <a href="price-list.html">Price List</a>
-    <a href="loan.html">Loan</a>
-    <a href="contact.html">Contact</a>
-</nav>
-</header>
 
-<a href="https://wa.me/919716406865" class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50">
-</a>
+    <div class="form-section" id="apply-form">
+        <div class="loan-form">
+            <h3 style="margin-bottom:20px; text-align:center;">Loan Inquiry Form</h3>
+            <form id="loanForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" required placeholder="Enter phone number">
+                </div>
+                <div class="form-group">
+                    <label>Select Loan Type</label>
+                    <select name="loan_type" id="loan_type_select">
+                        <option value="">-- Choose Loan --</option>
+                        <option value="Business Loan">Business Loan</option>
+                        <option value="Working Capital CC/TL">Working Capital (CC/TL)</option>
+                        <option value="Machinery Loan">Machinery Loan</option>
+                        <option value="Personal Loan">Personal Loan</option>
+                        <option value="Home Loan">Home Loan</option>
+                        <option value="Vehicle Loan">Vehicle Loan</option>
+                        <option value="Bill Discounting">Bill Discounting (Sale/Purchase)</option>
+                        <option value="Export Packing Credit">Export Packing Credit</option>
+                        <option value="Cash on Demand">Cash on Demand</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message/Remarks</label>
+                    <textarea name="message" rows="3" placeholder="Tell us about your requirement"></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+            </form>
+            <div id="successMsg" style="display:none; color: green; text-align: center; margin-top: 20px; font-weight: 600;">
+                Thank you! Our expert will contact you shortly.
+            </div>
+        </div>
+    </div>
+</section>
 
-<style>
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 100;
-}
-</style>
+<script>
+    // Function to auto-select loan type when a card is clicked
+    function setLoanType(type) {
+        document.getElementById('loan_type_select').value = type;
+        document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Google Sheets Integration Script
+    const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE'; // <--- Paste your URL here
+    const form = document.getElementById('loanForm');
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerHTML = "Submitting...";
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                btn.style.display = "none";
+                msg.style.display = "block";
+                form.reset();
+            })
+            .catch(error => {
+                btn.disabled = false;
+                btn.innerHTML = "Submit Application";
+                alert('Error! Please try again.');
+            });
+    });
+</script>
+
+</body>
+</html>
