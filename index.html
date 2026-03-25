@@ -29,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* --- Header & Navigation --- */
         header { 
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -57,14 +56,8 @@
             transition: var(--transition);
             position: relative;
         }
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
-            background: var(--accent-gold); transition: var(--transition);
-        }
         .nav-links a:hover { color: var(--accent-gold); }
-        .nav-links a:hover::after { width: 100%; }
 
-        /* --- Dropdown Modernization --- */
         .dropdown { position: relative; }
         .dropbtn { 
             background: none; border: none; font-family: inherit; font-weight: 500; 
@@ -77,14 +70,10 @@
             border-top: 3px solid var(--accent-gold);
             animation: fadeIn 0.3s ease;
         }
-        .dropdown-content a { 
-            color: var(--text-dark); padding: 12px 25px; display: block; 
-            font-size: 14px; border-bottom: none;
-        }
-        .dropdown-content a:hover { background: var(--light-blue); color: var(--dark-blue); padding-left: 30px; }
+        .dropdown-content a { color: var(--text-dark); padding: 12px 25px; display: block; font-size: 14px; }
+        .dropdown-content a:hover { background: var(--light-blue); padding-left: 30px; }
         .dropdown:hover .dropdown-content { display: block; }
 
-        /* --- Hero Section (Premium Look) --- */
         .hero { 
             background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), 
                         url('https://images.unsplash.com/photo-1454165833767-027ffea9e787?auto=format&fit=crop&w=1920&q=80'); 
@@ -92,59 +81,36 @@
             padding: 140px 8%; color: var(--white); min-height: 85vh; 
             display: flex; align-items: center; justify-content: center; text-align: center;
         }
-        .hero-content { max-width: 900px; }
-        .hero h1 { 
-            font-size: 4rem; line-height: 1.1; margin-bottom: 25px; font-weight: 700; 
-            letter-spacing: -1px;
-        }
-        .hero h1 span { color: var(--accent-gold); text-shadow: 2px 2px 0px rgba(0,0,0,0.2); }
-        .hero p { font-size: 1.25rem; margin-bottom: 40px; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 300; }
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; font-weight: 700; }
+        .hero h1 span { color: var(--accent-gold); }
+        .hero p { font-size: 1.25rem; margin-bottom: 40px; opacity: 0.9; max-width: 700px; margin: 0 auto 40px; }
         
-        /* --- Buttons --- */
         .btn-primary { 
             background: var(--accent-gold); color: white; padding: 16px 40px; 
             border-radius: 50px; text-decoration: none; font-weight: 600; 
             display: inline-block; transition: var(--transition);
             box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
-            text-transform: uppercase; letter-spacing: 1px; font-size: 14px;
+            text-transform: uppercase; font-size: 14px;
         }
-        .btn-primary:hover { 
-            background: var(--gold-hover); transform: translateY(-3px); 
-            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.4); 
-        }
+        .btn-primary:hover { background: var(--gold-hover); transform: translateY(-3px); }
 
         .mobile-menu-btn { display: none; font-size: 28px; background: none; border: none; color: var(--dark-blue); cursor: pointer; }
 
-        /* --- WhatsApp Float --- */
         .whatsapp-float { 
             position: fixed; bottom: 30px; right: 30px; background: #25d366; 
             color: white; padding: 15px 28px; border-radius: 50px; 
-            text-decoration: none; z-index: 2000; font-weight: 600;
-            display: flex; align-items: center; gap: 10px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); transition: var(--transition);
-        }
-        .whatsapp-float:hover { transform: scale(1.05) translateY(-5px); background: #1da851; }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 1024px) {
-            .hero h1 { font-size: 3rem; }
-            .nav-links { gap: 15px; }
+            text-decoration: none; z-index: 2000; display: flex; align-items: center; gap: 10px;
         }
 
         @media (max-width: 768px) {
-            header { padding: 15px 5%; }
             .mobile-menu-btn { display: block; }
             .nav-links {
                 display: none; flex-direction: column; position: absolute;
                 top: 100%; left: 0; width: 100%; background: var(--white);
                 padding: 40px 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-                gap: 25px; text-align: center; border-top: 1px solid #eee;
             }
-            .nav-links.active { display: flex; animation: slideInDown 0.4s ease; }
+            .nav-links.active { display: flex; }
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1rem; }
-            .btn-primary { width: 100%; }
-            .dropdown-content { position: static; box-shadow: none; width: 100%; display: block; background: transparent; }
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -161,3 +127,49 @@
     <button class="mobile-menu-btn" onclick="toggleMenu()">
         <i class="fas fa-bars-staggered"></i>
     </button>
+
+    <nav>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about/index.html">About</a></li>
+            <li class="dropdown">
+                <button class="dropbtn">Services <i class="fa fa-chevron-down" style="font-size: 10px;"></i></button>
+                <div class="dropdown-content">
+                    <a href="services/accounting/index.html">Accounting</a>
+                    <a href="services/gst/index.html">GST Filing</a>
+                    <a href="services/TDS/index.html">TDS Services</a>
+                    <a href="services/audit/index.html">Audit</a>
+                    <a href="services/balance sheet/index.html">Balance-sheet</a>
+                    <a href="services/cma/index.html">CMA</a>
+                    <a href="services/esic-pf/index.html">ESIC-PF</a>
+                    <a href="services/registration/index.html">Registration</a>
+                </div>
+            </li>
+            <li><a href="price-list/index.html">Pricing</a></li>
+            <li><a href="loan/index.html">Loan Advisory</a></li>
+            <li><a href="contact/index.html" class="btn-primary">Consult Now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content animate__animated animate__fadeInUp">
+        <h1>Navigate Your <span>Financial</span> Future</h1>
+        <p>Expert accounting and tax compliance services tailored for your business growth.</p>
+        <a href="contact/index.html" class="btn-primary">Get Started</a>
+    </div>
+</section>
+
+<a href="https://wa.me/919716406865" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i> <span>WhatsApp Us</span>
+</a>
+
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
