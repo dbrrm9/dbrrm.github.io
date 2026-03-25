@@ -71,7 +71,7 @@
         .hero p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 35px; opacity: 0.9; font-weight: 300; }
 
         .btn-primary { 
-            background: var(--accent-gold); color: white; padding: 14px 35px; border-radius: 50px; 
+            background: var(--accent-gold); color: white !important; padding: 14px 35px; border-radius: 50px; 
             text-decoration: none; font-weight: 600; display: inline-block; transition: var(--transition);
             box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
         }
@@ -98,11 +98,14 @@
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
         .footer-col h4 { margin-bottom: 20px; font-size: 18px; color: var(--accent-gold); }
         .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 10px; opacity: 0.7; font-size: 14px; }
+        .footer-col ul li { margin-bottom: 10px; font-size: 14px; }
+        /* Footer Links clickable styling */
+        .footer-col ul li a { color: rgba(255,255,255,0.7); text-decoration: none; transition: var(--transition); }
+        .footer-col ul li a:hover { color: var(--accent-gold); padding-left: 5px; }
+        .footer-col p { opacity: 0.6; font-size: 13px; line-height: 1.6; }
 
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; z-index: 1000; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-        /* --- Mobile Responsive --- */
         @media (max-width: 992px) {
             .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
             .nav-links.active { display: flex; }
@@ -140,7 +143,7 @@
             </li>
             <li><a href="price-list/index.html">Pricing</a></li>
             <li><a href="loan/index.html">Loan Advisory</a></li>
-            <li><a href="contact/index.html" class="btn-primary" style="color: white; padding: 10px 25px;">Consult Now</a></li>
+            <li><a href="contact/index.html" class="btn-primary" style="padding: 10px 25px;">Consult Now</a></li>
         </ul>
     </div>
 </header>
@@ -148,8 +151,8 @@
 <section class="hero">
     <div class="hero-content animate__animated animate__fadeIn">
         <h1>Navigate Your <span>Financial</span> Growth</h1>
-        <p>Premium accounting, tax compliance, and strategic financial advisory tailored for your business success. Let our 20 years of expertise handle your numbers.</p>
-        <div style="display: flex; gap: 15px; justify-content: center;">
+        <p>Premium accounting, tax compliance, and strategic financial advisory tailored for your business success.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
             <a href="#services" class="btn-primary">Our Services</a>
             <a href="contact/index.html" class="btn-primary" style="background: transparent; border: 2px solid white; box-shadow: none;">Contact Us</a>
         </div>
@@ -164,32 +167,17 @@
         <div class="service-card">
             <i class="fas fa-receipt"></i>
             <h4>GST & Taxation</h4>
-            <p>Error-free GST filings, tax planning, and litigation support to keep your business compliant.</p>
+            <p>Error-free GST filings and tax planning to keep your business compliant.</p>
         </div>
         <div class="service-card">
             <i class="fas fa-calculator"></i>
             <h4>Accounting</h4>
-            <p>Professional bookkeeping and financial reporting for startups and large enterprises.</p>
+            <p>Professional bookkeeping and financial reporting for enterprises.</p>
         </div>
         <div class="service-card">
             <i class="fas fa-chart-pie"></i>
             <h4>Audit & Compliance</h4>
-            <p>Statutory audits and internal checks to ensure transparency and financial health.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-file-invoice"></i>
-            <h4>CMA Reports</h4>
-            <p>Accurate CMA data preparation for bank loans and business funding requirements.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-id-card"></i>
-            <h4>Business Registration</h4>
-            <p>Speedy registration of Pvt Ltd, LLP, MSME, and NGO with end-to-end support.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-users"></i>
-            <h4>ESI & PF</h4>
-            <p>Seamless management of employee benefits and all labor law compliances.</p>
+            <p>Statutory audits ensuring transparency and financial health.</p>
         </div>
     </div>
 </section>
@@ -198,23 +186,32 @@
     <div class="footer-grid">
         <div class="footer-col">
             <div class="logo-text" style="color: white;">DBRRM</div>
-            <p style="margin-top: 15px; opacity: 0.6; font-size: 13px;">Simplified financial solutions for modern businesses. Registered in Noida, serving clients across India.</p>
+            <p style="margin-top: 15px;">Simplified financial solutions for modern businesses. Registered in Noida, serving clients across India.</p>
         </div>
         <div class="footer-col">
-            <h4>Services</h4>
+            <h4>Expert Services</h4>
             <ul>
-                <li>Income Tax Filing</li>
-                <li>GST Registration</li>
-                <li>Company Audit</li>
-                <li>Project Reports</li>
+                <li><a href="services/gst/index.html">GST Registration & Filing</a></li>
+                <li><a href="services/accounting/index.html">Professional Accounting</a></li>
+                <li><a href="services/audit/index.html">Company Audit</a></li>
+                <li><a href="services/cma/index.html">CMA Data Reports</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="about/index.html">About Our Firm</a></li>
+                <li><a href="price-list/index.html">Service Pricing</a></li>
+                <li><a href="loan/index.html">Loan Advisory</a></li>
+                <li><a href="contact/index.html">Contact Us</a></li>
             </ul>
         </div>
         <div class="footer-col">
             <h4>Contact Info</h4>
             <ul>
-                <li><i class="fas fa-phone"></i> +91 97164 06865</li>
-                <li><i class="fas fa-envelope"></i> info@dbrrm.com</li>
-                <li><i class="fas fa-map-marker-alt"></i> Noida, Uttar Pradesh</li>
+                <li><i class="fas fa-phone" style="color:var(--accent-gold); margin-right:10px;"></i> +91 97164 06865</li>
+                <li><i class="fas fa-envelope" style="color:var(--accent-gold); margin-right:10px;"></i> info@dbrrm.com</li>
+                <li><i class="fas fa-map-marker-alt" style="color:var(--accent-gold); margin-right:10px;"></i> Noida, Uttar Pradesh</li>
             </ul>
         </div>
     </div>
